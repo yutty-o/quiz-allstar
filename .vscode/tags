@@ -1,0 +1,49 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.8	//
+Flask	../main.py	/^from flask import Flask, jsonify, render_template, make_response, request, redirect, url_for$/;"	kind:namespace	line:5
+State	../main.py	/^class State:$/;"	kind:class	line:10
+__init__	../main.py	/^    def __init__(self):$/;"	kind:member	line:11
+answer	../main.py	/^    answer = 'answer'$/;"	kind:variable	line:16
+answer	../main.py	/^def answer():$/;"	kind:function	line:128
+answer_check	../main.py	/^    answer_check = 'answer_check'$/;"	kind:variable	line:17
+answer_list	../main.py	/^answer_list = None$/;"	kind:variable	line:25
+answer_start_time	../main.py	/^answer_start_time = None$/;"	kind:variable	line:28
+app	../main.py	/^app = Flask(__name__)$/;"	kind:variable	line:7
+appengine_config.py	../static/img/intro/appengine_config.py	1;"	kind:file	line:1
+bridge_answer_check	../main.py	/^def bridge_answer_check():$/;"	kind:function	line:194
+bridge_answer_start	../main.py	/^def bridge_answer_start():$/;"	kind:function	line:183
+bridge_init	../main.py	/^def bridge_init():$/;"	kind:function	line:219
+bridge_ready	../main.py	/^def bridge_ready():$/;"	kind:function	line:166
+bridge_rebirth	../main.py	/^def bridge_rebirth():$/;"	kind:function	line:231
+collector_list	../main.py	/^collector_list = None$/;"	kind:variable	line:21
+collector_name_list	../main.py	/^collector_name_list = None$/;"	kind:variable	line:22
+current_correct_num	../main.py	/^current_correct_num = None$/;"	kind:variable	line:26
+current_quiz_id	../main.py	/^current_quiz_id = None$/;"	kind:variable	line:27
+current_state	../main.py	/^current_state = None$/;"	kind:variable	line:20
+datetime	../main.py	/^from datetime import datetime$/;"	kind:namespace	line:2
+eliminated_list	../main.py	/^eliminated_list = None$/;"	kind:variable	line:23
+entry	../main.py	/^    entry = 'entry'$/;"	kind:variable	line:14
+entry	../main.py	/^def entry():$/;"	kind:function	line:91
+index	../main.py	/^def index():$/;"	kind:function	line:72
+init	../main.py	/^def init():$/;"	kind:function	line:32
+is_eliminated	../main.py	/^def is_eliminated(name):$/;"	kind:function	line:49
+is_special	../main.py	/^is_special = None$/;"	kind:variable	line:29
+jsonify	../main.py	/^from flask import Flask, jsonify, render_template, make_response, request, redirect, url_for$/;"	kind:namespace	line:5
+main.py	../main.py	1;"	kind:file	line:1
+make_response	../main.py	/^from flask import Flask, jsonify, render_template, make_response, request, redirect, url_for$/;"	kind:namespace	line:5
+participant_list	../main.py	/^participant_list = []$/;"	kind:variable	line:24
+ready	../main.py	/^    ready = 'ready'$/;"	kind:variable	line:15
+ready	../main.py	/^def ready():$/;"	kind:function	line:113
+redirect	../main.py	/^from flask import Flask, jsonify, render_template, make_response, request, redirect, url_for$/;"	kind:namespace	line:5
+render_template	../main.py	/^from flask import Flask, jsonify, render_template, make_response, request, redirect, url_for$/;"	kind:namespace	line:5
+request	../main.py	/^from flask import Flask, jsonify, render_template, make_response, request, redirect, url_for$/;"	kind:namespace	line:5
+reset_period	../main.py	/^def reset_period():$/;"	kind:function	line:225
+set_cookie	../main.py	/^def set_cookie(content, key, val):$/;"	kind:function	line:54
+time	../main.py	/^import time$/;"	kind:namespace	line:3
+update_by_name	../main.py	/^def update_by_name():$/;"	kind:function	line:64
+url_for	../main.py	/^from flask import Flask, jsonify, render_template, make_response, request, redirect, url_for$/;"	kind:namespace	line:5
+vendor	../static/img/intro/appengine_config.py	/^from google.appengine.ext import vendor$/;"	kind:namespace	line:1

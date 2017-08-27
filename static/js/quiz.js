@@ -245,17 +245,39 @@ Q.answer.load = function() {
   // reset answer info
   Q.answer.info = {};
   // load answer counts & (losers or winners)
-  $.getJSON(
-    "/bridge/answer/check",
-    function(json) {
-      Q.answer.info = {
-        counts_of_answers: json.answer_list,
-        losers_or_winners: json.correct_list
-      };
-      // enable the next button
-      Q.page.enableNext();
-    }
-  );
+  
+  // mock
+  Q.answer.info = {
+      counts_of_answers: [10, 20, 30, 40],
+      losers_or_winners: [
+        {
+          name: "ゆうと",
+          time: 1.89
+        },
+        {
+          name: "そうご",
+          time: 2.21
+        },
+        {
+          name: "なかむっら",
+          time: 3.12
+        }
+      ]
+  };
+  // enable the next button
+  Q.page.enableNext();
+  
+  // $.getJSON(
+  //   "/bridge/answer/check",
+  //   function(json) {
+  //     Q.answer.info = {
+  //       counts_of_answers: json.answer_list,
+  //       losers_or_winners: json.correct_list
+  //     };
+  //     // enable the next button
+  //     Q.page.enableNext();
+  //   }
+  // );
 };
 
 Q.answer.loadCounts = function(callback) {
@@ -319,7 +341,7 @@ Q.loser.toHtml = function(loser) {
 Q.loser.appendLoserTo = function(loser, losers, delay) {
   setTimeout(
     function() {
-      losers.append(Q.loser.toHtml(loser));
+      losers.prepend(Q.loser.toHtml(loser));
     },
     delay
   );
@@ -329,7 +351,7 @@ Q.loser.appendLastLoserTo = function(loser, losers, delay) {
   setTimeout(
     function() {
       var dom = $(Q.loser.toHtml(loser));
-      losers.append(dom);
+      losers.prepend(dom);
       dom.one(
         'webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend',
         function() {
@@ -380,7 +402,7 @@ Q.winner.toDom = function(winner) {
 Q.winner.appendWinnerTo = function(winner, winners, delay) {
   var dom = Q.winner.toDom(winner);
   dom.css('visibility', 'hidden');
-  winners.append(dom);
+  winners.prepend(dom);
   setTimeout(
     function() {
       dom.css('visibility', 'visible');
@@ -393,7 +415,7 @@ Q.winner.appendWinnerTo = function(winner, winners, delay) {
 Q.winner.appendFirstWinnerTo = function(winner, winners, delay) {
   var dom = Q.winner.toDom(winner);
   dom.css('visibility', 'hidden');
-  winners.append(dom);
+  winners.prepend(dom);
   setTimeout(
     function() {
       dom.css('visibility', 'visible');

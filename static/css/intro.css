@@ -71,19 +71,45 @@ ul li {
 /* Slide
  * --------------------------------------- */
 
-.bg-ttl {
-	background-image: url("../img/kei-shuko-intro.png");
+.bg-basic {
+	background-image: url("../img/intro/bg-basic.png");
 	background-size: cover;
 }
-.bg {
-	background-image: url("../img/kei-shuko.png");
+.bg-explain {
+	background-image: url("../img/intro/bg-explain.png");
 	background-size: cover;
 }
-
+.bg-opening {
+	background-image: url("../img/intro/bg-opening.png");
+	background-size: cover;
+}
+.bg-pre {
+	background-image: url("../img/intro/bg-pre.png");
+	background-size: cover;
+}
+.bg-prize {
+	background-image: url("../img/intro/bg-prize.png");
+	background-size: cover;
+}
+.bg-rule {
+	background-image: url("../img/intro/bg-rule.png");
+	background-size: cover;
+}
 .content {
 	visibility: hidden;
 	width: 80%;
 	margin: 0 auto;
+}
+.icon-opening-1 {
+	position: absolute;
+	top: 10px;
+	left: 10px;
+}
+
+.icon-opening-2 {
+	position: absolute;
+	bottom: 10px;
+	left: 10px;
 }
 
 /* Util
