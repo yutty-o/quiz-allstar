@@ -1,0 +1,236 @@
+@import url(https://fonts.googleapis.com/earlyaccess/mplus1p.css);
+
+body {
+    margin: 0;
+    background: url('../img/bg.jpg') no-repeat center top;
+    font-size: 20px;
+    font-family: "Mplus 1p";
+    font-weight: bold;
+}
+
+ul, ol, li {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+
+
+#controllers {
+    position: fixed;
+    bottom: 10px;
+    left: 10px;
+}
+
+#controllers button {
+    background-color: #ccc;
+    opacity: 0.2;
+    border: 1px solid #333;
+    border-radius: 4px;
+}
+
+#controllers button:hover {
+    opacity: 0.9;
+}
+
+
+
+#pages {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.page {
+    display: none;
+}
+
+.page.visible {
+    display: block;
+}
+
+.page h1 {
+    border-bottom: 1px solid #fff;
+    color: #fff;
+    margin: 20px 10px 0 10px;
+    padding: 0 2px 8px 2px;
+    font-size: 150%;
+}
+
+
+
+.page .contents {
+    border-radius: 3px;
+    margin: 30px 10px 10px 10px;
+    padding: 10px;
+    background-color: #fff;
+}
+
+.page .contents p {
+    color: #000;
+    font-size: 100%;
+    margin: 0;
+}
+
+.page .contents p .url {
+    background-color: #f00;
+    border-radius: 3px;
+    color: #fff;
+    padding: 2px 4px;
+}
+
+.page .contents h2 {
+    margin: 0 0 10px 0;
+    padding: 0;
+    font-size: 100%;
+}
+
+.page .contents ul li {
+    list-style: disc;
+    margin: 10px 0 0 23px;
+    color: #000;
+    font-size: 100%;
+}
+
+.page .contents button {
+    background-color: #fefefe;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.page .contents small {
+    font-size: 50%;
+    color: #666;
+}
+
+
+
+.movie {
+    height: 100%;
+    background-color: #000;
+}
+
+.movie video {
+    width: 100%;
+    margin: auto 0;
+}
+
+
+
+.quiz .countdown {
+    position: fixed;
+    bottom: 10px;
+    right: 10px;
+    margin: 0;
+    width: 80px;
+    height: 80px;
+    line-height: 200%;
+    text-align: center;
+    border: 10px #ff0 solid;
+    border-radius: 50%;
+    font-size: 40px;
+    font-weight: bold;
+    color: #ff0;
+    background-color: #f00;
+}
+
+
+
+.selection {
+    display: flex;
+    flex-wrap: wrap;
+    counter-reset: my-counter;
+    margin: 15px auto 0 auto;
+}
+
+.selection li {
+    position: relative;
+    display: flex;
+    align-items: center;
+    width: 40%;
+    height: 230px;
+    border-radius: 3px;
+    margin: 30px auto 10px auto;
+    padding: 10px;
+    background-color: #fff;
+    font-size: 200%;
+}
+
+.selection li:before {
+    position: absolute;
+    top: -30px;
+    left: -27px;
+    content: counter(my-counter);
+    counter-increment: my-counter;
+    background-color: #f00;
+    color: #fff;
+    font-weight: bold;
+    text-align: center;
+    vertical-align: middle;
+    height: 50px;
+    width: 50px;
+    line-height: 50px;
+    border: 3px solid #fff;
+    border-radius: 50%;
+    margin-right: 10px;
+    font-size: 100%;
+}
+
+.selection li img,
+.selection li video {
+    height: 100%;
+    margin: auto;
+}
+
+.answers .selection .answer.animated {
+    background-color: #ffb;
+}
+
+.answers .selection li {
+    position: relative;
+}
+.answers .selection li .count {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    display: block;
+    width: 40%;
+    background-color: #ccc;
+    font-size: 100%;
+    text-align: right;
+    padding: 6px 8px;
+    border-top-left-radius: 3px;
+    border-bottom-right-radius: 3px;
+}
+
+
+
+.losers .loser-list,
+.winners .winner-list {
+    margin: 20px 20px;
+}
+
+.losers .loser-list li,
+.winners .winner-list li {
+    display: block;
+    position: relative;
+    background-color: #f3f3f3;
+    color: #333;
+    font-size: 150%;
+    padding: 6px 8px;
+    margin-bottom: 6px;
+}
+
+.losers .loser-list li .time,
+.winners .winner-list li .time {
+    text-align: right;
+    background-color: #ccc;
+    font-size: 80%;
+    display: block;
+    position: absolute;
+    top: 6px;
+    right: 10px;
+    padding: 2px 4px;
+    border-radius: 2px;

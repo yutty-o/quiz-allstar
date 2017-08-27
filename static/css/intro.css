@@ -1,0 +1,115 @@
+@import url(https://fonts.googleapis.com/earlyaccess/mplus1p.css);
+
+/* Base
+ * --------------------------------------- */
+body{
+	font-family: "Mplus 1p";
+	font-weight: bold;
+	color: #373737;
+}
+.wrap{
+	margin-left: auto;
+	margin-right: auto;
+	width: 960px;
+	position: relative;
+}
+h1 {
+	text-align: center;
+	font-size: 4em;
+	margin-bottom: 50px;
+}
+p {	
+	font-size: 5em;
+	line-height: 1.5em;
+	text-align: center;
+}
+ul li {
+	font-size: 5em;
+	line-height: 1.5em;
+}
+
+.selection {
+	display: flex;
+	flex-wrap: wrap;
+	counter-reset: my-counter;
+	margin: 15px auto 0 auto;
+}
+
+.selection li {
+	position: relative;
+	display: flex;
+	align-items: center;
+	width: 40%;
+	height: 230px;
+	border-radius: 3px;
+	margin: 30px auto 10px auto;
+	padding: 10px;
+	background-color: #fff;
+	font-size: 200%;
+}
+
+.selection li:before {
+	position: absolute;
+	top: -30px;
+	left: -27px;
+	content: counter(my-counter);
+	counter-increment: my-counter;
+	background-color: #f00;
+	color: #fff;
+	font-weight: bold;
+	text-align: center;
+	vertical-align: middle;
+	height: 50px;
+	width: 50px;
+	line-height: 50px;
+	border: 3px solid #fff;
+	border-radius: 50%;
+	margin-right: 10px;
+	font-size: 100%;
+}
+
+/* Slide
+ * --------------------------------------- */
+
+.bg-ttl {
+	background-image: url("../img/kei-shuko-intro.png");
+	background-size: cover;
+}
+.bg {
+	background-image: url("../img/kei-shuko.png");
+	background-size: cover;
+}
+
+.content {
+	visibility: hidden;
+	width: 80%;
+	margin: 0 auto;
+}
+
+/* Util
+ * --------------------------------------- */
+.fc-red {
+	color: #ff689a
+}
+.fc-blue {
+	color: #2caaf4
+}
+.fadeInDown {
+	-webkit-animation-fill-mode:both;
+	-ms-animation-fill-mode:both;
+	animation-fill-mode:both;
+	-webkit-animation-duration:1s;
+	-ms-animation-duration:1s;
+	animation-duration:1s;
+	-webkit-animation-name: fadeInDown;
+	animation-name: fadeInDown;
+	visibility: visible !important;
+}
+@-webkit-keyframes fadeInDown {
+	0% { opacity: 0; -webkit-transform: translateY(-20px); }
+	100% { opacity: 1; -webkit-transform: translateY(0); }
+}
+@keyframes fadeInDown {
+	0% { opacity: 0; -webkit-transform: translateY(-20px); -ms-transform: translateY(-20px); transform: translateY(-20px); }
+	100% { opacity: 1; -webkit-transform: translateY(0); -ms-transform: translateY(0); transform: translateY(0); }
+}

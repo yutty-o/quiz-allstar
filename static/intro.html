@@ -1,0 +1,91 @@
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta name="robots" content="noindex,nofollow" />
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" />
+	<meta name="format-detection" content="telephone=no" />
+	<title>もっと知ってよ！早押し！けーとしゅーこのlove感謝祭</title>
+	<link rel="stylesheet" type="text/css" href="./css/jquery.fullPage.css" />
+	<link rel="stylesheet" type="text/css" href="./css/reset.css" />
+	<link rel="stylesheet" type="text/css" href="./css/intro.css" />
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+	<script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.9.1/jquery-ui.min.js"></script>
+	<script type="text/javascript" src="./js/vendors/scrolloverflow.min.js"></script>
+	<script type="text/javascript" src="./js/jquery.fullPage.min.js"></script>
+	<script type="text/javascript">
+		$(document).ready(function() {
+			$('#fullpage').fullpage({
+				controlArrows: false,
+				afterSlideLoad: function(anchorLink, index, slideAnchor, slideIndex) {
+					const $content = $('.slide-' + slideIndex + ' .content');
+					$content.addClass('fadeInDown');
+				},
+				onSlideLeave: function(anchorLink, index, slideIndex, direction, nextSlideIndex) {
+					const $content = $('.slide-' + slideIndex + ' .content');
+					$content.animate({ visibility: 'hidden' }, 500, function() {
+						$content.removeClass('fadeInDown');
+					});
+				}
+			});
+		});
+	</script>
+
+</head>
+<body>
+
+<div id="fullpage">
+	<div class="section" id="section1">
+	    <div class="slide slide-0 bg-ttl active">
+				
+			</div>
+	    <div class="slide slide-1 bg">
+				<div class="content">
+					<h1>ルール</h1>
+					<ul>
+						<li>・<span class="fc-red">オールスター感謝祭</span>クイズ</li>
+						<li>・１〜３問目<br />
+						　不正解者&<span class="fc-red">最も遅い正解者</span>が脱落</li>
+						<li>・４問目<br />
+						　<span class="fc-blue">１番早い正解者</span>が脱落</li>
+					</ul>
+				</div>
+			</div>
+	    <div class="slide slide-2 bg">
+				<div class="content">
+					<h1>準備</h1>
+					<ul>
+						<li>・入り口で配られた<span class="fc-blue">QRコード</span>の読取り</li>
+						<li>・名前を入力し送信</li>
+						<li>・「●●」さん。<br />
+							　エントリーが完了しましたが出たらOK
+						</li>
+					</ul>
+				</div>
+			</div>
+	    <div class="slide slide-3 bg">
+				<div class="content">
+					<h1>勝者へのご褒美</h1>
+					<p>けーとしゅーこから豪華商品プレゼントがあります。</p>
+				</div>
+			</div>
+			<div class="slide slide-4 bg">
+				<div class="content">
+					<h1>Q1<br />次のうち、新婦の名前は何でしょう</h1>
+					<ol class="selection">
+							<li>州子</li>
+							<li>宗子</li>
+							<li>修子</li>
+							<li>衆子</li>
+					</ol>
+					<p class="countdown">10</p>
+				</div>
+			</div>
+	</div>
+</div>
+
+</body>
+</html>
