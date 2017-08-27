@@ -1,337 +1,334 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <title>クイズ</title>
-        <meta name="robots" content="noindex,nofollow" />
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" />
-        <meta name="format-detection" content="telephone=no" />
+<head>
+<title>結婚式</title>
+<meta name="robots" content="noindex,nofollow" />
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" />
+<link rel="stylesheet" href="./css/style.css">
+<link rel="stylesheet" href="./css/animate.css">
+<script type="text/javascript" src="https://yuune-site-assets.s3-ap-northeast-1.amazonaws.com/javascripts/jquery-2.1.1.js"></script>
+<script type="text/javascript" src="./js/quiz.js"></script>
+</head>
+<body>
+<ul id="pages">
+    <li class="page first">
+        <h1>間もなくクイズをクイズを開始します！</h1>
+        <div class="contents">
+            <p>
+                スマートフォンで
+                <span class="url">http://bit.ly/shida-q</span>
+                にアクセスして、<strong>参加者登録</strong>をして下さい。<br />
+                ※途中参加はできません。
+            </p>
+            <p>
+                <img src="/static/img/qr.png" height="100" />
+            </p>
+        </div>
+        <div class="contents">
+            <h2>オールスター感謝祭風クイズ ルール説明</h2>
+            <ul id="rules">
+                <li>4択式の早押しクイズ</li>
+                <li>1〜3問目: 不正解者脱落 & 正解者で最も遅い回答者脱落</li>
+                <li>4問目（最後）: 最も早い回答者が勝者</li>
+            </ul>
+        </div>
+        <p class="contents">
+            <button id="init_period">回答状況リセット</button><br />
+            <small>
+                ※問題が途中まで進行してしまったが、Periodの進行状況を完全にリセットする場合に利用
+            </small>
+        </p>
 
-        <link rel="stylesheet" href="./css/style.css">
-        <link rel="stylesheet" href="./css/animate.css">
+        <audio preload="auto">
+            <source src="./bgm/opening.mp3">
+        </audio>
+    </li>
 
-        <script type="text/javascript" src="https://yuune-site-assets.s3-ap-northeast-1.amazonaws.com/javascripts/jquery-2.1.1.js"></script>
-        <script type="text/javascript" src="./js/quiz.js"></script>
-    </head>
-    <body>
-        <ul id="pages">
-            <li class="page first">
-                <h1>間もなくクイズをクイズを開始します！</h1>
-                <div class="contents">
-                    <p>
-                        スマートフォンで
-                        <span class="url">http://bit.ly/shida-q</span>
-                        にアクセスして、<strong>参加者登録</strong>をして下さい。<br />
-                        ※途中参加はできません。
-                    </p>
-                    <p>
-                        <img src="/static/img/qr.png" height="100" />
-                    </p>
-                </div>
-                <div class="contents">
-                    <h2>オールスター感謝祭風クイズ ルール説明</h2>
-                    <ul id="rules">
-                        <li>4択式の早押しクイズ</li>
-                        <li>1〜3問目: 不正解者脱落 & 正解者で最も遅い回答者脱落</li>
-                        <li>4問目（最後）: 最も早い回答者が勝者</li>
-                    </ul>
-                </div>
-                <p class="contents">
-                    <button id="init_period">回答状況リセット</button><br />
-                    <small>
-                        ※問題が途中まで進行してしまったが、Periodの進行状況を完全にリセットする場合に利用
-                    </small>
-                </p>
-
-                <audio preload="auto">
-                    <source src="./bgm/opening.mp3">
-                </audio>
-            </li>
-
-            <li class="page ready-quiz">
-                <h1>Q1 <span>志田さんの名前は次の内どれでしょう？</span></h1>
-                <div class="contents">
-                    <p>
-                        <strong>「次へ」</strong>を押して、
-                        <strong>回答画面</strong>に移動して下さい。
-                    </p>
-                    <p>
-                        <small>
-                            司会者は、参加者の皆さんが回答画面を表示できているか確認して下さい。
-                        </small>
-                    </p>
-                </div>
-                <audio preload="auto">
-                    <source src="./bgm/quiz_start.mp3">
-                </audio>
-            </li>
-            <li class="page quiz">
-                <h1>Q1 <span>志田さんの名前は次の内どれでしょう？</span></h1>
-                <ol class="selection">
-                    <li>志田 和成</li>
-                    <li>志田 和斗</li>
-                    <li>志田 一茂</li>
-                    <li>志田 一樹</li>
-                </ol>
-                <p class="countdown">10</p>
-                <audio preload="auto">
-                    <source src="./bgm/10sec_countdown.mp3">
-                </audio>
-            </li>
-            <li class="page answers">
-                <h1>A1 <span>志田さんの名前は次の内どれでしょう？</span></h1>
-                <ol class="selection">
-                    <li>志田 和成<span class="count">0</span></li>
-                    <li>志田 和斗<span class="count">0</span></li>
-                    <li class="answer">志田 一茂<span class="count">0</span></li>
-                    <li>志田 一樹<span class="count">0</span></li>
-                </ol>
-                <audio preload="auto" data-after-delay="500">
-                    <source src="./bgm/answer_check.mp3">
-                </audio>
-                <audio preload="auto">
-                    <source src="./bgm/answer.mp3">
-                </audio>
-            </li>
-            <li class="page losers">
-                <ul class="loser-list">
-                </ul>
-                <audio preload="auto">
-                    <source src="./bgm/loser.mp3">
-                </audio>
-            </li>
-
-            <li class="page ready-quiz">
-                <h1>Q2 <span>志田さんはどれ？</span></h1>
-                <div class="contents">
-                    <p>
-                        <strong>「次へ」</strong>を押して、
-                        <strong>回答画面</strong>に移動して下さい。
-                    </p>
-                    <p>
-                        <small>
-                            司会者は、参加者の皆さんが回答画面を表示できているか確認して下さい。
-                        </small>
-                    </p>
-                </div>
-                <audio preload="auto">
-                    <source src="./bgm/quiz_start.mp3">
-                </audio>
-            </li>
-            <li class="page quiz">
-                <h1>Q2 <span>志田さんはどれ？</span></h1>
-                <ol class="selection">
-                    <li>
-                        <img src="/static/img/q1/p2/s1.jpg" />
-                    </li>
-                    <li>
-                        <img src="/static/img/q1/p2/s2.jpg" />
-                    </li>
-                    <li>
-                        <img src="/static/img/q1/p2/s3.jpg" />
-                    </li>
-                    <li>
-                        <img src="/static/img/q1/p2/s4.jpg" />
-                    </li>
-                </ol>
-                <p class="countdown">10</p>
-                <audio preload="auto">
-                    <source src="./bgm/10sec_countdown.mp3">
-                </audio>
-            </li>
-            <li class="page answers">
-                <h1>A2 <span>志田さんはどれ？</span></h1>
-                <ol class="selection">
-                    <li>
-                        <img src="/static/img/q1/p2/s1.jpg" />
-                        <span class="count">0</span>
-                    </li>
-                    <li>
-                        <img src="/static/img/q1/p2/s2.jpg" />
-                        <span class="count">0</span>
-                    </li>
-                    <li>
-                        <img src="/static/img/q1/p2/s3.jpg" />
-                        <span class="count">0</span>
-                    </li>
-                    <li class="answer">
-                        <img src="/static/img/q1/p2/s4.jpg" />
-                        <span class="count">0</span>
-                    </li>
-                </ol>
-                <audio preload="auto" data-after-delay="500">
-                    <source src="./bgm/answer_check.mp3">
-                </audio>
-                <audio preload="auto">
-                    <source src="./bgm/answer.mp3">
-                </audio>
-            </li>
-            <li class="page">
-                <h1>A2 <span>志田さんはどれ？</span></h1>
-                <div class="contents">
-                    <p>
-                        <img src="/static/img/q1/p2/after.png" height="500" />
-                    </p>
-                </div>
-            </li>
-            <li class="page losers">
-                <ul class="loser-list">
-                </ul>
-                <audio preload="auto">
-                    <source src="./bgm/loser.mp3">
-                </audio>
-            </li>
-
-            <li class="page ready-quiz">
-                <h1>Q3 <span>志田さんの出身地は次のうちどれでしょうか？</span></h1>
-                <div class="contents">
-                    <p>
-                        <strong>「次へ」</strong>を押して、
-                        <strong>回答画面</strong>に移動して下さい。
-                    </p>
-                    <p>
-                        <small>
-                            司会者は、参加者の皆さんが回答画面を表示できているか確認して下さい。
-                        </small>
-                    </p>
-                </div>
-                <audio preload="auto">
-                    <source src="./bgm/quiz_start.mp3">
-                </audio>
-            </li>
-            <li class="page quiz">
-                <h1>Q3 <span>志田さんの出身地は次のうちどれでしょうか？</span></h1>
-                <ol class="selection">
-                    <li>
-                        <img src="/static/img/q1/p3/s1.jpg" />
-                    </li>
-                    <li>
-                        <img src="/static/img/q1/p3/s2.jpg" />
-                    </li>
-                    <li>
-                        <img src="/static/img/q1/p3/s3.jpg" />
-                    </li>
-                    <li class="answer">
-                        <img src="/static/img/q1/p3/s4.jpg" />
-                    </li>
-                </ol>
-                <p class="countdown">10</p>
-                <audio preload="auto">
-                    <source src="./bgm/10sec_countdown.mp3">
-                </audio>
-            </li>
-            <li class="page answers">
-                <h1>A3 <span>志田さんの出身地は次のうちどれでしょうか？</span></h1>
-                <ol class="selection">
-                    <li class="answer">
-                        <img src="/static/img/q1/p3/s1.jpg" />
-                        <span class="count">0</span>
-                    </li>
-                    <li>
-                        <img src="/static/img/q1/p3/s2.jpg" />
-                        <span class="count">0</span>
-                    </li>
-                    <li>
-                        <img src="/static/img/q1/p3/s3.jpg" />
-                        <span class="count">0</span>
-                    </li>
-                    <li>
-                        <img src="/static/img/q1/p3/s4.jpg" />
-                        <span class="count">0</span>
-                    </li>
-                </ol>
-                <audio preload="auto" data-after-delay="500">
-                    <source src="./bgm/answer_check.mp3">
-                </audio>
-                <audio preload="auto">
-                    <source src="./bgm/answer.mp3">
-                </audio>
-            </li>
-            <li class="page losers">
-                <ul class="loser-list">
-                </ul>
-                <audio preload="auto">
-                    <source src="./bgm/loser.mp3">
-                </audio>
-            </li>
-
-            <li class="page ready-quiz">
-                <h1>Q4 <span>志田さんがプロ級にうまいのはどれ？</span></h1>
-                <div class="contents">
-                    <p>
-                        <strong>「次へ」</strong>を押して、
-                        <strong>回答画面</strong>に移動して下さい。
-                    </p>
-                    <p>
-                        <small>
-                            司会者は、参加者の皆さんが回答画面を表示できているか確認して下さい。
-                        </small>
-                    </p>
-                </div>
-                <audio preload="auto">
-                    <source src="./bgm/quiz_start.mp3">
-                </audio>
-            </li>
-            <li class="page quiz">
-                <h1>Q4 <span>志田さんがプロ級にうまいのはどれ？</span></h1>
-                <ol class="selection">
-                    <li>
-                        <img src="/static/img/q1/p4/s1.jpg" />
-                    </li>
-                    <li>
-                        <img src="/static/img/q1/p4/s2.jpg" />
-                    </li>
-                    <li>
-                        <img src="/static/img/q1/p4/s3.jpg" />
-                    </li>
-                    <li>
-                        <img src="/static/img/q1/p4/s4.jpg" />
-                    </li>
-                </ol>
-                <p class="countdown">10</p>
-                <audio preload="auto">
-                    <source src="./bgm/10sec_countdown.mp3">
-                </audio>
-            </li>
-            <li class="page answers">
-                <h1>A2 <span>志田さんがプロ級にうまいのはどれ？</span></h1>
-                <ol class="selection">
-                    <li>
-                        <img src="/static/img/q1/p4/s1.jpg" />
-                        <span class="count">0</span>
-                    </li>
-                    <li class="answer">
-                        <img src="/static/img/q1/p4/s2.jpg" />
-                        <span class="count">0</span>
-                    </li>
-                    <li>
-                        <img src="/static/img/q1/p4/s3.jpg" />
-                        <span class="count">0</span>
-                    </li>
-                    <li>
-                        <img src="/static/img/q1/p4/s4.jpg" />
-                        <span class="count">0</span>
-                    </li>
-                </ol>
-                <audio preload="auto" data-after-delay="500">
-                    <source src="./bgm/answer_check.mp3">
-                </audio>
-                <audio preload="auto">
-                    <source src="./bgm/answer.mp3">
-                </audio>
-            </li>
-            <li class="page winners">
-                <ul class="winner-list">
-                </ul>
-                <audio preload="auto">
-                    <source src="./bgm/fanfare.mp3">
-                </audio>
-            </li>
+    <li class="page ready-quiz">
+        <h1>Q1 <span>志田さんの名前は次の内どれでしょう？</span></h1>
+        <div class="contents">
+            <p>
+                <strong>「次へ」</strong>を押して、
+                <strong>回答画面</strong>に移動して下さい。
+            </p>
+            <p>
+                <small>
+                    司会者は、参加者の皆さんが回答画面を表示できているか確認して下さい。
+                </small>
+            </p>
+        </div>
+        <audio preload="auto">
+            <source src="./bgm/quiz_start.mp3">
+        </audio>
+    </li>
+    <li class="page quiz">
+        <h1>Q1 <span>志田さんの名前は次の内どれでしょう？</span></h1>
+        <ol class="selection">
+            <li>志田 和成</li>
+            <li>志田 和斗</li>
+            <li>志田 一茂</li>
+            <li>志田 一樹</li>
+        </ol>
+        <p class="countdown">10</p>
+        <audio preload="auto">
+            <source src="./bgm/10sec_countdown.mp3">
+        </audio>
+    </li>
+    <li class="page answers">
+        <h1>A1 <span>志田さんの名前は次の内どれでしょう？</span></h1>
+        <ol class="selection">
+            <li>志田 和成<span class="count">0</span></li>
+            <li>志田 和斗<span class="count">0</span></li>
+            <li class="answer">志田 一茂<span class="count">0</span></li>
+            <li>志田 一樹<span class="count">0</span></li>
+        </ol>
+        <audio preload="auto" data-after-delay="500">
+            <source src="./bgm/answer_check.mp3">
+        </audio>
+        <audio preload="auto">
+            <source src="./bgm/answer.mp3">
+        </audio>
+    </li>
+    <li class="page losers">
+        <ul class="loser-list">
         </ul>
+        <audio preload="auto">
+            <source src="./bgm/loser.mp3">
+        </audio>
+    </li>
 
-        <ul id="controllers">
-            <li><button id="next">次へ</button></li>
-            <li><button id="rebirth">全員復活</button></li>
+    <li class="page ready-quiz">
+        <h1>Q2 <span>志田さんはどれ？</span></h1>
+        <div class="contents">
+            <p>
+                <strong>「次へ」</strong>を押して、
+                <strong>回答画面</strong>に移動して下さい。
+            </p>
+            <p>
+                <small>
+                    司会者は、参加者の皆さんが回答画面を表示できているか確認して下さい。
+                </small>
+            </p>
+        </div>
+        <audio preload="auto">
+            <source src="./bgm/quiz_start.mp3">
+        </audio>
+    </li>
+    <li class="page quiz">
+        <h1>Q2 <span>志田さんはどれ？</span></h1>
+        <ol class="selection">
+            <li>
+                <img src="/static/img/q1/p2/s1.jpg" />
+            </li>
+            <li>
+                <img src="/static/img/q1/p2/s2.jpg" />
+            </li>
+            <li>
+                <img src="/static/img/q1/p2/s3.jpg" />
+            </li>
+            <li>
+                <img src="/static/img/q1/p2/s4.jpg" />
+            </li>
+        </ol>
+        <p class="countdown">10</p>
+        <audio preload="auto">
+            <source src="./bgm/10sec_countdown.mp3">
+        </audio>
+    </li>
+    <li class="page answers">
+        <h1>A2 <span>志田さんはどれ？</span></h1>
+        <ol class="selection">
+            <li>
+                <img src="/static/img/q1/p2/s1.jpg" />
+                <span class="count">0</span>
+            </li>
+            <li>
+                <img src="/static/img/q1/p2/s2.jpg" />
+                <span class="count">0</span>
+            </li>
+            <li>
+                <img src="/static/img/q1/p2/s3.jpg" />
+                <span class="count">0</span>
+            </li>
+            <li class="answer">
+                <img src="/static/img/q1/p2/s4.jpg" />
+                <span class="count">0</span>
+            </li>
+        </ol>
+        <audio preload="auto" data-after-delay="500">
+            <source src="./bgm/answer_check.mp3">
+        </audio>
+        <audio preload="auto">
+            <source src="./bgm/answer.mp3">
+        </audio>
+    </li>
+    <li class="page">
+        <h1>A2 <span>志田さんはどれ？</span></h1>
+        <div class="contents">
+            <p>
+                <img src="/static/img/q1/p2/after.png" height="500" />
+            </p>
+        </div>
+    </li>
+    <li class="page losers">
+        <ul class="loser-list">
         </ul>
-    </body>
+        <audio preload="auto">
+            <source src="./bgm/loser.mp3">
+        </audio>
+    </li>
+
+    <li class="page ready-quiz">
+        <h1>Q3 <span>志田さんの出身地は次のうちどれでしょうか？</span></h1>
+        <div class="contents">
+            <p>
+                <strong>「次へ」</strong>を押して、
+                <strong>回答画面</strong>に移動して下さい。
+            </p>
+            <p>
+                <small>
+                    司会者は、参加者の皆さんが回答画面を表示できているか確認して下さい。
+                </small>
+            </p>
+        </div>
+        <audio preload="auto">
+            <source src="./bgm/quiz_start.mp3">
+        </audio>
+    </li>
+    <li class="page quiz">
+        <h1>Q3 <span>志田さんの出身地は次のうちどれでしょうか？</span></h1>
+        <ol class="selection">
+            <li>
+                <img src="/static/img/q1/p3/s1.jpg" />
+            </li>
+            <li>
+                <img src="/static/img/q1/p3/s2.jpg" />
+            </li>
+            <li>
+                <img src="/static/img/q1/p3/s3.jpg" />
+            </li>
+            <li class="answer">
+                <img src="/static/img/q1/p3/s4.jpg" />
+            </li>
+        </ol>
+        <p class="countdown">10</p>
+        <audio preload="auto">
+            <source src="./bgm/10sec_countdown.mp3">
+        </audio>
+    </li>
+    <li class="page answers">
+        <h1>A3 <span>志田さんの出身地は次のうちどれでしょうか？</span></h1>
+        <ol class="selection">
+            <li class="answer">
+                <img src="/static/img/q1/p3/s1.jpg" />
+                <span class="count">0</span>
+            </li>
+            <li>
+                <img src="/static/img/q1/p3/s2.jpg" />
+                <span class="count">0</span>
+            </li>
+            <li>
+                <img src="/static/img/q1/p3/s3.jpg" />
+                <span class="count">0</span>
+            </li>
+            <li>
+                <img src="/static/img/q1/p3/s4.jpg" />
+                <span class="count">0</span>
+            </li>
+        </ol>
+        <audio preload="auto" data-after-delay="500">
+            <source src="./bgm/answer_check.mp3">
+        </audio>
+        <audio preload="auto">
+            <source src="./bgm/answer.mp3">
+        </audio>
+    </li>
+    <li class="page losers">
+        <ul class="loser-list">
+        </ul>
+        <audio preload="auto">
+            <source src="./bgm/loser.mp3">
+        </audio>
+    </li>
+
+    <li class="page ready-quiz">
+        <h1>Q4 <span>志田さんがプロ級にうまいのはどれ？</span></h1>
+        <div class="contents">
+            <p>
+                <strong>「次へ」</strong>を押して、
+                <strong>回答画面</strong>に移動して下さい。
+            </p>
+            <p>
+                <small>
+                    司会者は、参加者の皆さんが回答画面を表示できているか確認して下さい。
+                </small>
+            </p>
+        </div>
+        <audio preload="auto">
+            <source src="./bgm/quiz_start.mp3">
+        </audio>
+    </li>
+    <li class="page quiz">
+        <h1>Q4 <span>志田さんがプロ級にうまいのはどれ？</span></h1>
+        <ol class="selection">
+            <li>
+                <img src="/static/img/q1/p4/s1.jpg" />
+            </li>
+            <li>
+                <img src="/static/img/q1/p4/s2.jpg" />
+            </li>
+            <li>
+                <img src="/static/img/q1/p4/s3.jpg" />
+            </li>
+            <li>
+                <img src="/static/img/q1/p4/s4.jpg" />
+            </li>
+        </ol>
+        <p class="countdown">10</p>
+        <audio preload="auto">
+            <source src="./bgm/10sec_countdown.mp3">
+        </audio>
+    </li>
+    <li class="page answers">
+        <h1>A2 <span>志田さんがプロ級にうまいのはどれ？</span></h1>
+        <ol class="selection">
+            <li>
+                <img src="/static/img/q1/p4/s1.jpg" />
+                <span class="count">0</span>
+            </li>
+            <li class="answer">
+                <img src="/static/img/q1/p4/s2.jpg" />
+                <span class="count">0</span>
+            </li>
+            <li>
+                <img src="/static/img/q1/p4/s3.jpg" />
+                <span class="count">0</span>
+            </li>
+            <li>
+                <img src="/static/img/q1/p4/s4.jpg" />
+                <span class="count">0</span>
+            </li>
+        </ol>
+        <audio preload="auto" data-after-delay="500">
+            <source src="./bgm/answer_check.mp3">
+        </audio>
+        <audio preload="auto">
+            <source src="./bgm/answer.mp3">
+        </audio>
+    </li>
+    <li class="page winners">
+        <ul class="winner-list">
+        </ul>
+        <audio preload="auto">
+            <source src="./bgm/fanfare.mp3">
+        </audio>
+    </li>
+</ul>
+
+<ul id="controllers">
+    <li><button id="next">次へ</button></li>
+    <li><button id="rebirth">全員復活</button></li>
+</ul>
+</body>
 </html>
