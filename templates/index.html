@@ -1,0 +1,21 @@
+{% extends "layout.html" %}
+{% block body %}
+
+<p class="welcome">{{name}}さん</p>
+
+{% if anwer is none %}
+<p>登録ありがとうございます。ゲームが始まるまで少々お待ちください。</p>
+{% endblock %}
+
+{% if answer is not none %}
+<div id="answer">
+    <p class="no">{{answer}}</p>
+    <p class="message">と回答しました。</p>
+</div>
+{% endif %}
+
+<p id="next">
+    <a href="/ready" class="btn">次へ</a>
+</p>
+
+{% endblock %}

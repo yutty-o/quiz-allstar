@@ -1,0 +1,30 @@
+{% extends "layout.html" %}
+{% block body %}
+<ul id="selections">
+    <li class="answer no1" data-answer="0"><span>1</span></li>
+    <li class="answer no2" data-answer="1"><span>2</span></li>
+    <li class="answer no3" data-answer="2"><span>3</span></li>
+    <li class="answer no4" data-answer="3"><span>4</span></li>
+</ul>
+<script>
+  $('.answer').click(function () {
+    var answer = $(this).data('answer');
+    var quizID = '{{ quiz_id }}';
+
+    $.ajax({
+      contentType: 'application/json',
+      type: 'POST',
+      url: '/answer',
+      data: JSON.stringify({
+        answer: answer,
+        quiz_id: quizID
+      }),
+      success: function (data) {
+        if (data === 'answer') {
+          window.location.href = '/';
+        }
+      }
+    })
+  });
+</script>
+{% endblock %}

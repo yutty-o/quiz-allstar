@@ -1,0 +1,9 @@
+*.pyc
+/static/video/*
+!/static/video/.gitkeep
+
+.tern-port
+lib/*
+!lib/.git_keep
+
+.DS_Store
