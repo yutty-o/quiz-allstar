@@ -1,4 +1,8 @@
 $(function() {
+  // 高さ指定
+  const wh = $(window).outerHeight();
+  $('body').css({ height: wh });
+  // コントローラセット
   setupControllers();
   setupPages();
   Q.page.gotoFirst();

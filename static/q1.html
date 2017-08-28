@@ -20,16 +20,18 @@
         <ul id="pages">
 
             <li class="page first ready-quiz">
-                <h1 class="ready">Q1</h1>
-                <h2 class="ready">次のうち、新婦の名前は<br />何でしょう</h2>
+                <p class="ready-q-no">Q1</p>
+                <div class="ready-q-text">
+                    <p>次のうち、新婦の名前は<br />何でしょう</p>
+                </div>
                 <p class="note">「次へ」を押して、回答画面に移動してください</p>
                 <audio preload="auto">
                     <source src="./bgm/quiz_start.mp3">
                 </audio>
             </li>
             <li class="page quiz">
-                <h1 class="qa">Q1</h1>
-                <h2 class="qa">次のうち、新婦の名前は何でしょう</h2>
+                <p class="qa-q-no">Q1</p>
+                <p class="qa-q-text">次のうち、新婦の名前は何でしょう</p>
                 <ol class="selection">
                     <li>州子</li>
                     <li>宗子</li>
@@ -44,8 +46,8 @@
                 </audio>
             </li>
             <li class="page answers">
-                <h1 class="qa">Q1</h1>
-                <h2 class="qa">次のうち、新婦の名前は何でしょう</h2>
+                <p class="qa-q-no">Q1</p>
+                <p class="qa-q-text">次のうち、新婦の名前は何でしょう</p>
                 <ol class="selection">
                     <li>州子<span class="count">0</span></li>
                     <li>宗子<span class="count">0</span></li>
@@ -60,156 +62,10 @@
                 </audio>
             </li>
             <li class="page">
-                <h1 class="qa">Q1</h1>
-                <h2 class="qa">次のうち、新婦の名前は何でしょう</h2>
-                <p>正解は hogehoge</p>
-            </li>
-            <li class="page losers">
-                <ul class="loser-list">
-                </ul>
-                <audio preload="auto">
-                    <source src="./bgm/loser.mp3">
-                </audio>
-            </li>
-
-            <li class="page ready-quiz">
-                <h1>Q2 <span>志田さんが大嫌いなものは何?</span></h1>
-                <div class="contents">
-                    <p>
-                        <strong>「次へ」</strong>を押して、
-                        <strong>回答画面</strong>に移動して下さい。
-                    </p>
-                    <p>
-                        <small>
-                            司会者は、参加者の皆さんが回答画面を表示できているか確認して下さい。
-                        </small>
-                    </p>
-                </div>
-                <audio preload="auto">
-                    <source src="./bgm/quiz_start.mp3">
-                </audio>
-            </li>
-            <li class="page quiz">
-                <h1>Q2 <span>志田さんが大嫌いなものは何?</span></h1>
-                <ol class="selection">
-                    <li>
-                        <img src="/static/img/q2/p1/s1.jpg" />
-                    </li>
-                    <li>
-                        <img src="/static/img/q2/p1/s2.jpg" />
-                    </li>
-                    <li>
-                        <img src="/static/img/q2/p1/s3.jpg" />
-                    </li>
-                    <li>
-                        <img src="/static/img/q2/p1/s4.jpg" />
-                    </li>
-                </ol>
-                <p class="countdown">10</p>
-                <audio preload="auto">
-                    <source src="./bgm/10sec_countdown.mp3">
-                </audio>
-            </li>
-            <li class="page answers">
-                <h1>A2 <span>志田さんが大嫌いなものは何?</span></h1>
-                <ol class="selection">
-                    <li>
-                        <img src="/static/img/q2/p1/s1.jpg" />
-                        <span class="count">0</span>
-                    </li>
-                    <li class="answer">
-                        <img src="/static/img/q2/p1/s2.jpg" />
-                        <span class="count">0</span>
-                    </li>
-                    <li>
-                        <img src="/static/img/q2/p1/s3.jpg" />
-                        <span class="count">0</span>
-                    </li>
-                    <li>
-                        <img src="/static/img/q2/p1/s4.jpg" />
-                        <span class="count">0</span>
-                    </li>
-                </ol>
-                <audio preload="auto" data-after-delay="500">
-                    <source src="./bgm/answer_check.mp3">
-                </audio>
-                <audio preload="auto">
-                    <source src="./bgm/answer.mp3">
-                </audio>
-            </li>
-            <li class="page losers">
-                <ul class="loser-list">
-                </ul>
-                <audio preload="auto">
-                    <source src="./bgm/loser.mp3">
-                </audio>
-            </li>
-
-            <li class="page ready-quiz">
-                <h1>Q3 <span>志田さんの奥さんに聞いた志田さんの意外な一面は？</span></h1>
-                <div class="contents">
-                    <p>
-                        <strong>「次へ」</strong>を押して、
-                        <strong>回答画面</strong>に移動して下さい。
-                    </p>
-                    <p>
-                        <small>
-                            司会者は、参加者の皆さんが回答画面を表示できているか確認して下さい。
-                        </small>
-                    </p>
-                </div>
-                <audio preload="auto">
-                    <source src="./bgm/quiz_start.mp3">
-                </audio>
-            </li>
-            <li class="page quiz">
-                <h1>Q3 <span>志田さんの奥さんに聞いた志田さんの意外な一面は？</span></h1>
-                <ol class="selection">
-                    <li>甘えん坊</li>
-                    <li>子煩悩</li>
-                    <li>鍋奉行</li>
-                    <li>怒りん坊</li>
-                </ol>
-                <p class="countdown">10</p>
-                <audio preload="auto">
-                    <source src="./bgm/10sec_countdown.mp3">
-                </audio>
-            </li>
-            <li class="page answers">
-                <h1>A3 <span>志田さんの奥さんに聞いた志田さんの意外な一面は？</span></h1>
-                <ol class="selection">
-                    <li>
-                        甘えん坊
-                        <span class="count">0</span>
-                    </li>
-                    <li class="answer">
-                        子煩悩
-                        <span class="count">0</span>
-                    </li>
-                    <li>
-                        鍋奉行
-                        <span class="count">0</span>
-                    </li>
-                    <li>
-                        怒りん坊
-                        <span class="count">0</span>
-                    </li>
-                </ol>
-                <audio preload="auto" data-after-delay="500">
-                    <source src="./bgm/answer_check.mp3">
-                </audio>
-                <audio preload="auto">
-                    <source src="./bgm/answer.mp3">
-                </audio>
-            </li>
-            <li class="page">
-                <h1>A3 <span>志田さんの奥さんに聞いた志田さんの意外な一面は？</span></h1>
-                <div class="contents">
-                    <h2>奥さんのコメント</h2>
-                    <ul>
-                        <li>調査能力の高いところ。旅行とか外食とかもろもろ任せきりです。</li>
-                        <li>トイレ掃除をしてくれるところ。神ですね。助かってます。</li>
-                    </ul>
+                <p class="qa-q-no">Q1</p>
+                <p class="qa-q-text">次のうち、新婦の名前は何でしょう</p>
+                <div class="answer_explain">
+                    <p>正解は 修子</p>
                 </div>
             </li>
             <li class="page losers">
@@ -220,69 +76,54 @@
                 </audio>
             </li>
 
+            
             <li class="page ready-quiz">
-                <h1>Q4 <span>子供の名前は次のうちどれ？</span></h1>
-                <div class="contents">
-                    <p>
-                        <strong>「次へ」</strong>を押して、
-                        <strong>回答画面</strong>に移動して下さい。
-                    </p>
-                    <p>
-                        <small>
-                            司会者は、参加者の皆さんが回答画面を表示できているか確認して下さい。
-                        </small>
-                    </p>
-                </div>
-                <audio preload="auto">
-                    <source src="./bgm/quiz_start.mp3">
-                </audio>
-            </li>
-            <li class="page quiz">
-                <h1>Q4 <span>子供の名前は次のうちどれ？</span></h1>
-                <ol class="selection">
-                    <li>志田 一樹</li>
-                    <li>志田 一馬</li>
-                    <li>志田 結菜</li>
-                    <li>志田 柚花</li>
-                </ol>
-                <p class="countdown">10</p>
-                <audio preload="auto">
-                    <source src="./bgm/10sec_countdown.mp3">
-                </audio>
-            </li>
-            <li class="page answers">
-                <h1>A4 <span>子供の名前は次のうちどれ？</span></h1>
-                <ol class="selection">
-                    <li class="answer">
-                        志田 一樹
-                        <span class="count">0</span>
-                    </li>
-                    <li>
-                        志田 一馬
-                        <span class="count">0</span>
-                    </li>
-                    <li>
-                        志田 結菜
-                        <span class="count">0</span>
-                    </li>
-                    <li>
-                        志田 柚花
-                        <span class="count">0</span>
-                    </li>
-                </ol>
-                <audio preload="auto" data-after-delay="500">
-                    <source src="./bgm/answer_check.mp3">
-                </audio>
-                <audio preload="auto">
-                    <source src="./bgm/answer.mp3">
-                </audio>
-            </li>
-            <li class="page">
-                <h1>A4 <span>子供の名前は次のうちどれ？</span></h1>
-                <p class="contents">
-                    <img src="/static/img/q2/p4/after.jpg" height="500" />
-                </p>
-            </li>
+                    <p class="ready-q-no">Q1</p>
+                    <div class="ready-q-text">
+                        <p>次のうち、新婦の名前は<br />何でしょう</p>
+                    </div>
+                    <p class="note">「次へ」を押して、回答画面に移動してください</p>
+                    <audio preload="auto">
+                        <source src="./bgm/quiz_start.mp3">
+                    </audio>
+                </li>
+                <li class="page quiz">
+                    <h1 class="qa-q-no">Q1</h1>
+                    <h2 class="qa-q-text">次のうち、新婦の名前は何でしょう</h2>
+                    <ol class="selection">
+                        <li>州子</li>
+                        <li>宗子</li>
+                        <li>修子</li>
+                        <li>衆子</li>
+                    </ol>
+                    <div class="heart">
+                        <p class="countdown">10</p>
+                    </div>
+                    <audio preload="auto">
+                        <source src="./bgm/10sec_countdown.mp3">
+                    </audio>
+                </li>
+                <li class="page answers">
+                    <h1 class="qa-q-no">Q1</h1>
+                    <h2 class="qa-q-text">次のうち、新婦の名前は何でしょう</h2>
+                    <ol class="selection">
+                        <li>州子<span class="count">0</span></li>
+                        <li>宗子<span class="count">0</span></li>
+                        <li class="answer">修子<span class="count">0</span></li>
+                        <li>衆子<span class="count">0</span></li>
+                    </ol>
+                    <audio preload="auto" data-after-delay="500">
+                        <source src="./bgm/answer_check.mp3">
+                    </audio>
+                    <audio preload="auto">
+                        <source src="./bgm/answer.mp3">
+                    </audio>
+                </li>
+                <li class="page">
+                    <h1 class="qa-q-no">Q1</h1>
+                    <h2 class="qa-q-text">次のうち、新婦の名前は何でしょう</h2>
+                    <p>正解は 修子</p>
+                </li>
             <li class="page winners">
                 <ul class="winner-list">
                 </ul>

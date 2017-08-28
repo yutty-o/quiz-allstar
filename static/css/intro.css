@@ -7,15 +7,9 @@ body{
 	font-weight: bold;
 	color: #373737;
 }
-.wrap{
-	margin-left: auto;
-	margin-right: auto;
-	width: 960px;
-	position: relative;
-}
 h1 {
 	text-align: center;
-	font-size: 4em;
+	font-size: 3.5em;
 	margin-bottom: 50px;
 }
 p {	
@@ -24,80 +18,40 @@ p {
 	text-align: center;
 }
 ul li {
-	font-size: 5em;
+	font-size: 4em;
 	line-height: 1.5em;
-}
-
-.selection {
-	display: flex;
-	flex-wrap: wrap;
-	counter-reset: my-counter;
-	margin: 15px auto 0 auto;
-}
-
-.selection li {
-	position: relative;
-	display: flex;
-	align-items: center;
-	width: 40%;
-	height: 230px;
-	border-radius: 3px;
-	margin: 30px auto 10px auto;
-	padding: 10px;
-	background-color: #fff;
-	font-size: 200%;
-}
-
-.selection li:before {
-	position: absolute;
-	top: -30px;
-	left: -27px;
-	content: counter(my-counter);
-	counter-increment: my-counter;
-	background-color: #f00;
-	color: #fff;
-	font-weight: bold;
-	text-align: center;
-	vertical-align: middle;
-	height: 50px;
-	width: 50px;
-	line-height: 50px;
-	border: 3px solid #fff;
-	border-radius: 50%;
-	margin-right: 10px;
-	font-size: 100%;
 }
 
 /* Slide
  * --------------------------------------- */
 
 .bg-basic {
-	background-image: url("../img/intro/bg-basic.png");
+	background: url("../img/intro/bg-basic.png") no-repeat;
 	background-size: cover;
 }
 .bg-explain {
-	background-image: url("../img/intro/bg-explain.png");
+	background: url("../img/intro/bg-explain.png") no-repeat;
 	background-size: cover;
 }
 .bg-opening {
-	background-image: url("../img/intro/bg-opening.png");
+	background: url("../img/intro/bg-opening.png") no-repeat;
 	background-size: cover;
 }
 .bg-pre {
-	background-image: url("../img/intro/bg-pre.png");
+	background: url("../img/intro/bg-pre.png") no-repeat;
 	background-size: cover;
 }
 .bg-prize {
-	background-image: url("../img/intro/bg-prize.png");
+	background: url("../img/intro/bg-prize.png") no-repeat;
 	background-size: cover;
 }
 .bg-rule {
-	background-image: url("../img/intro/bg-rule.png");
+	background: url("../img/intro/bg-rule.png") no-repeat;
 	background-size: cover;
 }
 .content {
 	visibility: hidden;
-	width: 80%;
+	width: 85%;
 	margin: 0 auto;
 }
 .icon-opening-1 {

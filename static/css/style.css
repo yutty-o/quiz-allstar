@@ -4,25 +4,28 @@
  * Base
  */
 body {
-    background: url('../img/intro/bg-basic.png') no-repeat center top;
+    color: #373737;
     font-size: 20px;
     font-family: "Mplus 1p";
     font-weight: bold;
-    color: #373737;
+    overflow: hidden;
 }
 h1,h2 {
     text-align: center;
 }
 .wrap {
+    background: url('../img/intro/bg-basic.png') no-repeat;
+    background-size: cover;
     display: table;
     table-layout: fixed;
     width: 100%;
+    height: 100%;
 }
 .wrap-inner {
     display: table-cell;
     vertical-align: middle;
     width: 100%;
-    height: 983px;
+    height: 100%;
 }
 .page {
     display: none;
@@ -53,29 +56,43 @@ h1,h2 {
 /**
  * Page
  */
-.page h1.ready {
-    margin-bottom: 100px;
-    font-size: 4em;
+.page p {
+    text-align: center;
 }
-.page h2.ready {
-    margin-bottom: 200px;
+.ready-q-no {
+    margin-bottom: -80px;
+    font-size: 5em;
+}
+.ready-q-text {
+    display: table;
+    table-layout: fixed;
+    width: 100%;
+    height: 529px;
+    background: url('../img/quiz/icon-heart-yellow.png') center center no-repeat;
+    background-size: 587px 529px;
     font-size: 4em;
+    margin-bottom: -40px;
+}
+.ready-q-text p {
+    display: table-cell;
+    vertical-align: middle;
 }
 .page .note {
     font-size: 2em;
     text-align: center; 
 }
-.page h1.qa {
+.qa-q-no {
     font-size: 2em;
     margin-bottom: 20px;
 }
-.page h2.qa {
+.qa-q-text {
     font-size: 2em;
 }
 .heart {
     position: absolute;
-    top: 10px;
+    top: 26px;
     right: 100px;
+    z-index: 1;
 }
 .countdown {
     position: relative;
@@ -83,27 +100,27 @@ h1,h2 {
     width: 80px;
     height: 80px;
     text-align: center;
-    font-size: 3em;
+    font-size: 2.5em;
     font-weight: bold;
     color: #fff;
 }
 .countdown:before,
 .countdown:after {
-	position:absolute;
-	content:"";
-	width:100px;
-	height:160px;
+    position:absolute;
+    content:"";
+	width:65px;
+	height:106px;
     background:#ff0011;
-    top: -57px;
+    top: -32px;
     z-index: -1;
 }
 .countdown:before {
-    left: -32px;
+    left: -7px;
 	transform:rotate(-45deg);
 	border-radius:100px 100px 0 0;
 }
 .countdown:after {
-    left: 11px;
+    left: 22px;
 	transform:rotate(45deg);
 	border-radius:100px 100px 0 0;
 }
@@ -112,7 +129,8 @@ h1,h2 {
     display: flex;
     flex-wrap: wrap;
     counter-reset: my-counter;
-    margin: 15px auto 0 auto;
+    margin: 15px auto 0;
+    width: 80%;
 }
 .selection li {
     position: relative;
@@ -120,7 +138,7 @@ h1,h2 {
     justify-content: center;
     align-items: center;
     width: 40%;
-    height: 260px;
+    height: 200px;
     border-radius: 30px;
     margin: 30px auto 10px auto;
     padding: 10px;
@@ -182,6 +200,10 @@ h1,h2 {
     border-bottom-right-radius: 3px;
 }
 
+.answer_explain {
+    margin-top: 30px;
+    font-size: 4em;
+}
 
 
 .losers .loser-list,
@@ -211,3 +233,4 @@ h1,h2 {
     right: 10px;
     padding: 2px 4px;
     border-radius: 2px;
+}
