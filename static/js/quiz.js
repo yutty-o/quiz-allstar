@@ -41,6 +41,7 @@ function setupControllers() {
 
 function setupPages() {
   $('.page').on('show:page', function() {
+    $('.wrap').removeClass('overlay_loser')
     Q.bgm.stopAll();
     Q.bgm.play();
   });
@@ -263,8 +264,28 @@ Q.answer.load = function() {
           time: 2.21
         },
         {
-          name: "なかむっら",
+          name: "なかむら",
           time: 3.12
+        },
+        {
+          name: "荻野",
+          time: 4.32
+        },
+        {
+          name: "けいこ",
+          time: 5.12
+        },
+        {
+          name: "ゆってぃ",
+          time: 6.22
+        },
+        {
+          name: "しゅう",
+          time: 9.12
+        },
+        {
+          name: "8484",
+          time: 8.12
         }
       ]
   };
@@ -316,6 +337,7 @@ Q.loser.load = function(callback) {
 };
 
 Q.loser.show = function() {
+  $('.wrap').addClass('overlay_loser');
   Q.loser.load(function(losers) {
     var delay = 0;
     var container = $('.loser-list', Q.page.current());

@@ -4,6 +4,8 @@
  * Base
  */
 body {
+    background: url('../img/intro/bg-basic.png') no-repeat;
+    background-size: cover;
     color: #373737;
     font-size: 20px;
     font-family: "Mplus 1p";
@@ -14,8 +16,6 @@ h1,h2 {
     text-align: center;
 }
 .wrap {
-    background: url('../img/intro/bg-basic.png') no-repeat;
-    background-size: cover;
     display: table;
     table-layout: fixed;
     width: 100%;
@@ -199,11 +199,28 @@ h1,h2 {
     border-top-left-radius: 3px;
     border-bottom-right-radius: 3px;
 }
-
 .answer_explain {
-    margin-top: 30px;
-    font-size: 4em;
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 10px;
+    width: 70%;
+    margin: 15px auto 0;
+    height: 430px;
+    position: relative;
 }
+p.answer_ttl {
+    font-size: 3em;
+    text-align: left;
+    margin-bottom: 10px;
+}
+.answer_content {
+    font-size: 4em;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translateY(-50%) translateX(-50%);
+}
+
 
 
 .losers .loser-list,
@@ -233,4 +250,10 @@ h1,h2 {
     right: 10px;
     padding: 2px 4px;
     border-radius: 2px;
+}
+
+.overlay_loser {
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.5);
 }
