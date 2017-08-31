@@ -203,7 +203,7 @@ h1,h2 {
     background-color: #fff;
     padding: 30px;
     border-radius: 10px;
-    width: 70%;
+    width: 80%;
     margin: 15px auto 0;
     height: 430px;
     position: relative;
@@ -225,35 +225,66 @@ p.answer_ttl {
 
 .losers .loser-list,
 .winners .winner-list {
-    margin: 20px 20px;
+    width: 80%;
+    margin: 15px auto 0;
+    position: relative;
 }
 
 .losers .loser-list li,
 .winners .winner-list li {
     display: block;
-    position: relative;
+    position: absolute;
     background-color: #f3f3f3;
+    border-radius: 10px;
+    margin-bottom: 8px;
+    width: 100%;
+}
+p.rank_txt {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    padding: 6px 12px;
+    height: 50px;
+    box-sizing: border-box;
+    line-height: 38px;
     color: #333;
     font-size: 150%;
-    padding: 6px 8px;
-    margin-bottom: 6px;
+    text-align: left;
+}
+.losers .loser-list li.last p.rank_txt,
+.winners .winner-list li.last p.rank_txt {
+    height: 65px;
+    line-height: 53px;
 }
 
 .losers .loser-list li .time,
 .winners .winner-list li .time {
     text-align: right;
-    background-color: #ccc;
     font-size: 80%;
     display: block;
     position: absolute;
-    top: 6px;
+    top: 3px;
     right: 10px;
     padding: 2px 4px;
-    border-radius: 2px;
+}
+
+.loser_ttl,
+.winner_ttl {
+    color: #ff0029;
+    font-size: 2em;
+    text-align: left;
+    width: 80%;
+    margin: 0 auto 20px;
 }
 
 .overlay_loser {
     width: 100%;
     height: 100%;
     background-color: rgba(0,0,0,0.5);
+}
+
+.overlay_winner {
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255,200,40,0.15);
 }

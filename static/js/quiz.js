@@ -8,6 +8,9 @@ $(function() {
   Q.page.gotoFirst();
 });
 
+const LIST_HEIGHT = 58;
+const LIST_LAST_HEIGHT = 73;
+
 var Q = {
   util: {},
   period: {},
@@ -41,7 +44,8 @@ function setupControllers() {
 
 function setupPages() {
   $('.page').on('show:page', function() {
-    $('.wrap').removeClass('overlay_loser')
+    $('.wrap').removeClass('overlay_loser');
+    $('.wrap').removeClass('overlay_winner');
     Q.bgm.stopAll();
     Q.bgm.play();
   });
@@ -268,6 +272,14 @@ Q.answer.load = function() {
           time: 3.12
         },
         {
+          name: "けー",
+          time: 2.21
+        },
+        {
+          name: "しゅーこ",
+          time: 3.12
+        },
+        {
           name: "荻野",
           time: 4.32
         },
@@ -285,7 +297,7 @@ Q.answer.load = function() {
         },
         {
           name: "8484",
-          time: 8.12
+          time: 9.52
         }
       ]
   };
@@ -342,6 +354,18 @@ Q.loser.show = function() {
     var delay = 0;
     var container = $('.loser-list', Q.page.current());
     container.html('');
+
+    // containerの高さを指定
+    let ch = 0;
+    for (var i=0; i<losers.length; i++) {
+      if (i == 0) {
+        ch += LIST_LAST_HEIGHT;
+      } else {
+        ch += LIST_HEIGHT;
+      }
+    }
+    container.css({height: ch});
+
     for (var i=0; i<losers.length; i++) {
       delay += Q.loser.DELAY_DELTA;
 
@@ -350,34 +374,40 @@ Q.loser.show = function() {
         Q.loser.appendLastLoserTo(
           losers[i],
           container,
-          Q.loser.DELAY_DELTA * Q.loser.MAX_LOSERS + Q.loser.LAST_DELAY
+          Q.loser.DELAY_DELTA * Q.loser.MAX_LOSERS + Q.loser.LAST_DELAY,
+          i
         );
       } else {
-        Q.loser.appendLoserTo(losers[i], container, delay);
+        Q.loser.appendLoserTo(losers[i], container, delay, i);
       }
     }
   });
 };
 
 Q.loser.toHtml = function(loser) {
-  return '<li class="animated flipInX">' + loser.name +
-    '<span class="time">' + loser.time + ' sec</span></li>';
+  return '<li class="animated flipInX"><p class="rank_txt">' + loser.name +
+    '<span class="time">' + loser.time + ' sec</span></p></li>';
 };
 
-Q.loser.appendLoserTo = function(loser, losers, delay) {
+Q.loser.appendLoserTo = function(loser, losers, delay, index) {
+  var dom = $(Q.loser.toHtml(loser));
+
   setTimeout(
     function() {
-      losers.prepend(Q.loser.toHtml(loser));
+      losers.prepend(dom);
+      dom.css({bottom: index*LIST_HEIGHT});
     },
     delay
   );
 };
 
-Q.loser.appendLastLoserTo = function(loser, losers, delay) {
+Q.loser.appendLastLoserTo = function(loser, losers, delay, index) {
+  var dom = $(Q.loser.toHtml(loser));
+  dom.addClass('last');
   setTimeout(
     function() {
-      var dom = $(Q.loser.toHtml(loser));
-      losers.prepend(dom);
+      losers.prepend(dom);  
+      dom.css({bottom: index*LIST_HEIGHT});
       dom.one(
         'webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend',
         function() {
@@ -400,19 +430,32 @@ Q.winner.load = function(callback) {
 };
 
 Q.winner.show = function() {
+  $('.wrap').addClass('overlay_winner');
   Q.winner.load(function(winners) {
     var delay = Q.winner.DELAY_DELTA * Q.winner.MAX_WINNERS + Q.winner.LAST_DELAY;
     var container = $('.winner-list', Q.page.current());
     container.html('');
+
+    // containerの高さを指定
+    let ch = 0;
+    for (var i=0; i<winners.length; i++) {
+      if (i == 0) {
+        ch += LIST_LAST_HEIGHT;
+      } else {
+        ch += LIST_HEIGHT;
+      }
+    }
+    container.css({height: ch});
+
     for (var i=0; i<winners.length; i++) {
       delay -= Q.winner.DELAY_DELTA;
 
       if (i == 0) {
         // last item
-        Q.winner.appendFirstWinnerTo(winners[i], container, delay);
+        Q.winner.appendFirstWinnerTo(winners[i], container, delay, i);
         delay -= Q.winner.LAST_DELAY;
       } else {
-        Q.winner.appendWinnerTo(winners[i], container, delay);
+        Q.winner.appendWinnerTo(winners[i], container, delay, i);
       }
     }
   });
@@ -420,15 +463,16 @@ Q.winner.show = function() {
 
 Q.winner.toDom = function(winner) {
   return $(
-    '<li>' + winner.name +
-      '<span class="time">' + winner.time + ' sec</span></li>'
+    '<li><p class="rank_txt">' + winner.name +
+      '<span class="time">' + winner.time + ' sec</p></span></li>'
   );
 };
 
-Q.winner.appendWinnerTo = function(winner, winners, delay) {
+Q.winner.appendWinnerTo = function(winner, winners, delay, index) {
   var dom = Q.winner.toDom(winner);
   dom.css('visibility', 'hidden');
-  winners.prepend(dom);
+  dom.css({top: (index - 1)*LIST_HEIGHT + LIST_LAST_HEIGHT});
+  winners.append(dom);
   setTimeout(
     function() {
       dom.css('visibility', 'visible');
@@ -438,10 +482,12 @@ Q.winner.appendWinnerTo = function(winner, winners, delay) {
   );
 };
 
-Q.winner.appendFirstWinnerTo = function(winner, winners, delay) {
+Q.winner.appendFirstWinnerTo = function(winner, winners, delay, index) {
   var dom = Q.winner.toDom(winner);
   dom.css('visibility', 'hidden');
-  winners.prepend(dom);
+  dom.css({top: 0});
+  dom.addClass('last');
+  winners.append(dom);
   setTimeout(
     function() {
       dom.css('visibility', 'visible');
