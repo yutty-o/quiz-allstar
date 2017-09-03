@@ -108,6 +108,19 @@ def entry():
 
     return response
 
+@app.route('/check', methods=['GET'])
+def checkState():
+    global current_state
+    name = request.cookies.get('name', None)
+
+    global eliminated_list, participant_list
+
+    result = {
+        "current_state": current_state,
+        "is_eliminated": is_eliminated(name)
+    }
+    return jsonify(ResultSet=result)
+
 
 @app.route('/ready', methods=['GET'])
 def ready():
@@ -120,7 +133,7 @@ def ready():
             and name in participant_list \
             and current_quiz_id is not None:
         return render_template('ready.html', quiz_id=current_quiz_id)
-
+    
     return redirect(url_for('index'))
 
 

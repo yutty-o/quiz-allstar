@@ -23,6 +23,10 @@
 				afterSlideLoad: function(anchorLink, index, slideAnchor, slideIndex) {
 					const $content = $('.slide-' + slideIndex + ' .content');
 					$content.addClass('fadeInDown');
+
+					if (slideIndex == 1) {
+						$('.intro_audio')[0].play();
+					}
 				},
 				onSlideLeave: function(anchorLink, index, slideIndex, direction, nextSlideIndex) {
 					const $content = $('.slide-' + slideIndex + ' .content');
@@ -84,18 +88,16 @@
 	    <div class="slide slide-5 bg-explain">
 				<div class="content">
 					<h1>操作説明</h1>
-					<p>(説明を入れる)</p>
+					<p><img src="./img/intro/icon-explain.png" width="820" height="375" /></p>
 				</div>
-			</div>
-			<div class="slide slide-6 bg-basic">
-				<div class="content">
-					<p>
-						<img class="icon" src="./img/intro/icon-start.png" width="693" height="535" />
-					</p>
-				</div>
+				<ul id="controllers">
+						<li><button id="next" onclick="location.href= '/static/q1.html'">次へ</button></li>
+				</ul>
 			</div>
 	</div>
 </div>
-
+<audio class="intro_audio" preload="auto" loop>
+		<source src="./bgm/intro.mp3">
+</audio>
 </body>
 </html>

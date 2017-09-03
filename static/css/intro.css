@@ -65,6 +65,30 @@ ul li {
 	bottom: 10px;
 	left: 10px;
 }
+.bg-explain h1 {
+	margin-bottom: 80px !important;
+}
+
+/**
+ * Controllers
+ */
+.fp-tableCell {
+	position: relative;
+}
+#controllers {
+	position: absolute;
+	bottom: 10px;
+	left: 10px;
+}
+#controllers button {
+	color: #373737;
+	opacity: 0.2;
+	border: 1px solid #333;
+	border-radius: 4px;
+}
+#controllers button:hover {
+	opacity: 0.9;
+}
 
 /* Util
  * --------------------------------------- */

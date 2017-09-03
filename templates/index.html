@@ -1,21 +1,65 @@
 {% extends "layout.html" %}
 {% block body %}
 
-<p class="welcome">{{name}}さん</p>
-
-{% if anwer is none %}
-<p>登録ありがとうございます。ゲームが始まるまで少々お待ちください。</p>
-{% endblock %}
-
-{% if answer is not none %}
-<div id="answer">
-    <p class="no">{{answer}}</p>
-    <p class="message">と回答しました。</p>
+{% if answer is none %}
+<div class="wrap index_bg">
+<h1>
+    <img src="/static/img/user/index_h1.png" width="144" height="35" />
+</h1>
+<div class="name-box">
+    <p class="welcome">{{name}}さん</p>
+</div>
+<div class="txt-box">
+    <p>ありがとうございます！<br />2次会イベントへのエントリーが<br />完了しました。</p>
+</div>
+<div class="ano-box">
+    <dl>
+        <dt>！お願い！</dt>
+        <dd>スムーズな進行のため、イベントが始まるまで、この画面を今のブラウザ上に残しておいてください。</dd>
+    </dl>
+</div>
+<div class="next-box">
+    <p id="next">
+        <a href="/ready" class="btn">次へ</a>
+    </p>
+    <p class="next-ano">※イベントが開始時に、タップ可能となります</p>
+</div>
 </div>
 {% endif %}
 
-<p id="next">
-    <a href="/ready" class="btn">次へ</a>
+{% if answer is not none %}
+<div class="wrap answer-bg">
+<h1>
+    <img src="/static/img/user/answer_h1.png" width="218" height="34" />
+</h1>
+<div id="answer">
+    <p class="ans_name">{{name}}さんは</p>
+    <p class="no no{{answer}}">{{answer}}</p>
+    <p class="message">と回答しました。</p>
+</div>
+<p id="chkAndNext" class="btn">
+    次へ
 </p>
+<script>
+$(function() {
+    $('#chkAndNext').click(function() {
+        $.ajax({
+            type: "GET",
+            url: "/check",
+            success: function(result) {
+                const current_state = result.ResultSet.current_state;
+                const is_eliminated = result.ResultSet.is_eliminated;
+                if (current_state != 'answer' && current_state != 'answer_check' && !is_eliminated) {
+                    location.href = '/ready';
+                }
+            }
+        })
+    });
+});
+</script>
+</div>
+{% endif %}
+
+
 
 {% endblock %}

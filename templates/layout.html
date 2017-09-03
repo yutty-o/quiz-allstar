@@ -4,10 +4,18 @@
     <meta charset="UTF-8">
     <meta name="viewport"
           content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no"/>
-    <title>RJB All star</title>
+    <title>早押し！けーとしゅーこのLOVE感謝祭</title>
+    <link rel="stylesheet" href="/static/css/reset.css">
     <link rel="stylesheet" href="/static/css/user.css">
     <script src="//code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="
             crossorigin="anonymous"></script>
+    <script>
+      $(function() {
+          // 高さ指定
+          const wh = $(window).outerHeight();
+          $('body').css({ height: wh });
+      });
+    </script>
 </head>
 <body>
 {% block body %}{% endblock %}

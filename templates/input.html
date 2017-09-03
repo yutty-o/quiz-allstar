@@ -5,11 +5,17 @@
 {{error}}
 {% endif %}
 
-<h1>参加者登録</h1>
+<div class="wrap input_bg">
+
+<h1>
+    <img src="/static/img/user/input_h1.png" width="251" height="87" />
+</h1>
 
 <form action="/entry" method="post" id="register">
-    <label for="name">名前（他の参加者が分かる名前）</label>
-    <input type="text" name="name" id="name"/>
-    <input type="submit" id="submit" class="btn" value="登録"/>
+    <label for="name">お名前を入力して<br />登録ボタンを押してください</label>
+    <input type="text" name="name" id="name" placeholder="例：若林修子"/>
+    <input type="submit" id="submit" class="btn" value="登録する"/>
 </form>
+
+</div>
 {% endblock %}

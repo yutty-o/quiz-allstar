@@ -203,7 +203,7 @@ Q.quiz.ready = function() {
   var correct_num = $('.answer', page.nextAll('.answers')[0]).index();
 
   // 最後の問題か否か
-  var is_special = page.index() == ($('.ready-quiz').length - 1);
+  var is_special = page.index() == ($('.ready-quiz').length);
 
   Q.util.post(
     "/bridge/ready",
@@ -301,6 +301,7 @@ Q.answer.load = function() {
         }
       ]
   };
+
   // enable the next button
   Q.page.enableNext();
   
