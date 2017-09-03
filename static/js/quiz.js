@@ -255,67 +255,67 @@ Q.answer.load = function() {
   Q.answer.info = {};
   // load answer counts & (losers or winners)
   
-  // mock
-  Q.answer.info = {
-      counts_of_answers: [10, 20, 30, 40],
-      losers_or_winners: [
-        {
-          name: "ゆうと",
-          time: 1.89
-        },
-        {
-          name: "そうご",
-          time: 2.21
-        },
-        {
-          name: "なかむら",
-          time: 3.12
-        },
-        {
-          name: "けー",
-          time: 2.21
-        },
-        {
-          name: "しゅーこ",
-          time: 3.12
-        },
-        {
-          name: "荻野",
-          time: 4.32
-        },
-        {
-          name: "けいこ",
-          time: 5.12
-        },
-        {
-          name: "ゆってぃ",
-          time: 6.22
-        },
-        {
-          name: "しゅう",
-          time: 9.12
-        },
-        {
-          name: "8484",
-          time: 9.52
-        }
-      ]
-  };
+  // // mock
+  // Q.answer.info = {
+  //     counts_of_answers: [10, 20, 30, 40],
+  //     losers_or_winners: [
+  //       {
+  //         name: "ゆうと",
+  //         time: 1.89
+  //       },
+  //       {
+  //         name: "そうご",
+  //         time: 2.21
+  //       },
+  //       {
+  //         name: "なかむら",
+  //         time: 3.12
+  //       },
+  //       {
+  //         name: "けー",
+  //         time: 2.21
+  //       },
+  //       {
+  //         name: "しゅーこ",
+  //         time: 3.12
+  //       },
+  //       {
+  //         name: "荻野",
+  //         time: 4.32
+  //       },
+  //       {
+  //         name: "けいこ",
+  //         time: 5.12
+  //       },
+  //       {
+  //         name: "ゆってぃ",
+  //         time: 6.22
+  //       },
+  //       {
+  //         name: "しゅう",
+  //         time: 9.12
+  //       },
+  //       {
+  //         name: "8484",
+  //         time: 9.52
+  //       }
+  //     ]
+  // };
 
   // enable the next button
   Q.page.enableNext();
   
-  // $.getJSON(
-  //   "/bridge/answer/check",
-  //   function(json) {
-  //     Q.answer.info = {
-  //       counts_of_answers: json.answer_list,
-  //       losers_or_winners: json.correct_list
-  //     };
-  //     // enable the next button
-  //     Q.page.enableNext();
-  //   }
-  // );
+  $.getJSON(
+    "/bridge/answer/check",
+    function(json) {
+      Q.answer.info = {
+        counts_of_answers: json.answer_list,
+        losers_or_winners: json.correct_list
+      };
+      // enable the next button
+      Q.page.enableNext();
+    }
+  );
 };
 
 Q.answer.loadCounts = function(callback) {
