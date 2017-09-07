@@ -7,6 +7,7 @@
         <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" />
         <meta name="format-detection" content="telephone=no" />
 
+        <link rel="stylesheet" href="./css/reset.css">
         <link rel="stylesheet" href="./css/style.css">
         <link rel="stylesheet" href="./css/animate.css">
 
@@ -14,164 +15,52 @@
         <script type="text/javascript" src="./js/quiz.js"></script>
     </head>
     <body>
+    <div class="wrap">
+        <div class="wrap-inner">
         <ul id="pages">
+            <!-- ready -->
             <li class="page first">
-                <h1>間もなくクイズをクイズを開始します！</h1>
-                <div class="contents">
-                    <p>
-                        スマートフォンで
-                        <span class="url">http://bit.ly/shida-q</span>
-                        にアクセスして、<strong>参加者登録</strong>をして下さい。<br />
-                        ※途中参加はできません。
-                    </p>
-                    <p>
-                        <img src="/static/img/qr.png" height="100" />
-                    </p>
-                </div>
-                <div class="contents">
-                    <h2>オールスター感謝祭風クイズ ルール説明</h2>
-                    <ul id="rules">
-                        <li>4択式の早押しクイズ</li>
-                        <li>1〜3問目: 不正解者脱落 & 正解者で最も遅い回答者脱落</li>
-                        <li>4問目（最後）: 最も早い回答者が勝者</li>
-                    </ul>
-                </div>
-                <p class="contents">
-                    <button id="init_period">回答状況リセット</button><br />
-                    <small>
-                        ※問題が途中まで進行してしまったが、Periodの進行状況を完全にリセットする場合に利用
-                    </small>
-                </p>
-
+                <p class="start_icon"><img src="./img/intro/icon-start.png" width="693" height="535" /></p>    
                 <audio preload="auto">
                     <source src="./bgm/opening.mp3">
                 </audio>
             </li>
 
+            <!-- Q1 -->
             <li class="page ready-quiz">
-                <h1>Q1 <span>志田さんの奥さんに聞いた志田さんに直して欲しい所はどれ？</span></h1>
-                <div class="contents">
-                    <p>
-                        <strong>「次へ」</strong>を押して、
-                        <strong>回答画面</strong>に移動して下さい。
-                    </p>
-                    <p>
-                        <small>
-                            司会者は、参加者の皆さんが回答画面を表示できているか確認して下さい。
-                        </small>
-                    </p>
+                <p class="ready-q-no">Q1</p>
+                <div class="ready-q-text">
+                    <p>新郎の身長はどれ？</p>
                 </div>
+                <p class="note">「次へ」を押して、回答画面に移動してください</p>
                 <audio preload="auto">
                     <source src="./bgm/quiz_start.mp3">
                 </audio>
             </li>
             <li class="page quiz">
-                <h1>Q1 <span>志田さんの奥さんに聞いた志田さんに直して欲しい所はどれ？</span></h1>
+                <p class="qa-q-no">Q1</p>
+                <p class="qa-q-text">新郎の身長はどれ？</p>
                 <ol class="selection">
-                    <li>私より足が細いこと</li>
-                    <li>私よりオシャレなこと</li>
-                    <li>私より顔が小さいこと</li>
-                    <li>私より声が高いこと</li>
+                    <li>103cm</li>
+                    <li>165cm</li>
+                    <li>175cm</li>
+                    <li>185cm</li>
                 </ol>
-                <p class="countdown">10</p>
+                <div class="heart">
+                    <p class="countdown">10</p>
+                </div>
                 <audio preload="auto">
                     <source src="./bgm/10sec_countdown.mp3">
                 </audio>
             </li>
             <li class="page answers">
-                <h1>A1 <span>志田さんの奥さんに聞いた志田さんに直して欲しい所はどれ？</span></h1>
+                <p class="qa-q-no">Q1</p>
+                <p class="qa-q-text">新郎の身長はどれ？</p>
                 <ol class="selection">
-                    <li class="answer">
-                        私より足が細いこと
-                        <span class="count">0</span>
-                    </li>
-                    <li>
-                        私よりオシャレなこと
-                        <span class="count">0</span>
-                    </li>
-                    <li>
-                        私より顔が小さいこと
-                        <span class="count">0</span>
-                    </li>
-                    <li>
-                        私より声が高いこと
-                        <span class="count">0</span>
-                    </li>
-                </ol>
-                <audio preload="auto" data-after-delay="500">
-                    <source src="./bgm/answer_check.mp3">
-                </audio>
-                <audio preload="auto">
-                    <source src="./bgm/answer.mp3">
-                </audio>
-            </li>
-            <li class="page">
-                <h1>A1 <span>志田さんの奥さんに聞いた志田さんに直して欲しい所はどれ？</span></h1>
-                <div class="contents">
-                    <h2>奥さんのコメント</h2>
-                    <ul>
-                        <li>私よりも足が細いところ</li>
-                        <li>メガネがいつも曇りがちなところ</li>
-                    </ul>
-                </div>
-            </li>
-            <li class="page losers">
-                <ul class="loser-list">
-                </ul>
-                <audio preload="auto">
-                    <source src="./bgm/loser.mp3">
-                </audio>
-            </li>
-
-            <li class="page ready-quiz">
-                <h1>Q2 <span>57期下期のLev2障害発生件数は次のうちどれ??</span></h1>
-                <div class="contents">
-                    <p>
-                        <strong>「次へ」</strong>を押して、
-                        <strong>回答画面</strong>に移動して下さい。
-                    </p>
-                    <p>
-                        <small>
-                            司会者は、参加者の皆さんが回答画面を表示できているか確認して下さい。
-                        </small>
-                    </p>
-                </div>
-                <audio preload="auto">
-                    <source src="./bgm/quiz_start.mp3">
-                </audio>
-            </li>
-            <li class="page quiz">
-                <h1>Q2 <span>57期下期のLev2障害発生件数は次のうちどれ??</span></h1>
-                <ol class="selection">
-                    <li>19件</li>
-                    <li>28件</li>
-                    <li>34件</li>
-                    <li>43件</li>
-                </ol>
-                <p class="countdown">10</p>
-                <audio preload="auto">
-                    <source src="./bgm/10sec_countdown.mp3">
-                </audio>
-            </li>
-            <li class="page answers">
-                <h1>A2 <span>57期下期のLev2障害発生件数は次のうちどれ?</span></h1>
-                <ol class="selection">
-                    <li>
-                        19件
-                        <span class="count">0</span>
-                    </li>
-                    <li class="answer">
-                        28件
-                        <span class="count">0</span>
-                    </li>
-                    <li>
-                        34件
-                        <span class="count">0</span>
-                    </li>
-                    <li>
-                        43件
-                        <span class="count">0</span>
-                    </li>
+                    <li>103cm<span class="count">0</span></li>
+                    <li>165cm<span class="count">0</span></li>
+                    <li class="answer">175cm<span class="count">0</span></li>
+                    <li>185cm<span class="count">0</span></li>
                 </ol>
                 <audio preload="auto" data-after-delay="500">
                     <source src="./bgm/answer_check.mp3">
@@ -181,6 +70,7 @@
                 </audio>
             </li>
             <li class="page losers">
+                <h1 class="loser_ttl">脱落はこの人・・・</h1>
                 <ul class="loser-list">
                 </ul>
                 <audio preload="auto">
@@ -188,55 +78,42 @@
                 </audio>
             </li>
 
+            
+            <!-- Q2 -->
             <li class="page ready-quiz">
-                <h1>Q3 <span>奥さんの所属会社はどこ?</span></h1>
-                <div class="contents">
-                    <p>
-                        <strong>「次へ」</strong>を押して、
-                        <strong>回答画面</strong>に移動して下さい。
-                    </p>
-                    <p>
-                        <small>
-                            司会者は、参加者の皆さんが回答画面を表示できているか確認して下さい。
-                        </small>
-                    </p>
+                <p class="ready-q-no">Q2</p>
+                <div class="ready-q-text">
+                    <p>新婦の出身高校はどれ？</p>
                 </div>
+                <p class="note">「次へ」を押して、回答画面に移動してください</p>
                 <audio preload="auto">
                     <source src="./bgm/quiz_start.mp3">
                 </audio>
             </li>
             <li class="page quiz">
-                <h1>Q3 <span>奥さんの所属会社はどこ?</span></h1>
+                <p class="qa-q-no">Q2</h1>
+                <p class="qa-q-text">新婦の出身高校はどれ？</p>
                 <ol class="selection">
-                    <li>日本IBM</li>
-                    <li>リクルートマーケティングパートナーズ</li>
-                    <li>リクルートライフスタイル</li>
-                    <li>リクルートジョブズ</li>
+                    <li>雙葉</li>
+                    <li>学習院</li>
+                    <li>暁星</li>
+                    <li>白百合</li>
                 </ol>
-                <p class="countdown">10</p>
+                <div class="heart">
+                    <p class="countdown">10</p>
+                </div>
                 <audio preload="auto">
                     <source src="./bgm/10sec_countdown.mp3">
                 </audio>
             </li>
             <li class="page answers">
-                <h1>A3 <span>奥さんの所属会社はどこ?</span></h1>
+                <p class="qa-q-no">Q2</h1>
+                <p class="qa-q-text">新婦の出身高校はどれ？</p>
                 <ol class="selection">
-                    <li>
-                        日本IBM
-                        <span class="count">0</span>
-                    </li>
-                    <li>
-                        リクルートマーケティングパートナーズ
-                        <span class="count">0</span>
-                    </li>
-                    <li class="answer">
-                        リクルートライフスタイル
-                        <span class="count">0</span>
-                    </li>
-                    <li>
-                        リクルートジョブズ
-                        <span class="count">0</span>
-                    </li>
+                    <li>雙葉<span class="count">0</span></li>
+                    <li>学習院<span class="count">0</span></li>
+                    <li>暁星<span class="count">0</span></li>
+                    <li class="answer">白百合<span class="count">0</span></li>
                 </ol>
                 <audio preload="auto" data-after-delay="500">
                     <source src="./bgm/answer_check.mp3">
@@ -246,6 +123,7 @@
                 </audio>
             </li>
             <li class="page losers">
+                <h1 class="loser_ttl">脱落はこの人・・・</h1>
                 <ul class="loser-list">
                 </ul>
                 <audio preload="auto">
@@ -253,63 +131,95 @@
                 </audio>
             </li>
 
+
+            <!-- Q3 -->
             <li class="page ready-quiz">
-                <h1>Q4 <span>志田さんがASG時代寝泊まりしていたのはどこ?</span></h1>
-                <div class="contents">
-                    <p>
-                        <strong>「次へ」</strong>を押して、
-                        <strong>回答画面</strong>に移動して下さい。
-                    </p>
-                    <p>
-                        <small>
-                            司会者は、参加者の皆さんが回答画面を表示できているか確認して下さい。
-                        </small>
-                    </p>
+                <p class="ready-q-no">Q3</p>
+                <div class="ready-q-text">
+                    <p>新郎のあだ名でないものはどれ？</p>
                 </div>
+                <p class="note">「次へ」を押して、回答画面に移動してください</p>
                 <audio preload="auto">
                     <source src="./bgm/quiz_start.mp3">
                 </audio>
             </li>
             <li class="page quiz">
-                <h1>Q4 <span>志田さんがASG時代寝泊まりしていたのはどこ?</span></h1>
+                <p class="qa-q-no">Q3</h1>
+                <p class="qa-q-text">新郎のあだ名でないものはどれ？</p>
                 <ol class="selection">
-                    <li>
-                        <img src="/static/img/q3/p4/s1.jpg" />
-                    </li>
-                    <li>
-                        <img src="/static/img/q3/p4/s2.png" />
-                    </li>
-                    <li>
-                        <img src="/static/img/q3/p4/s3.jpg" />
-                    </li>
-                    <li>
-                        <img src="/static/img/q3/p4/s4.jpg" />
-                    </li>
+                    <li>わかばい</li>
+                    <li>けーけー</li>
+                    <li>ばやし</li>
+                    <li>あられ</li>
                 </ol>
-                <p class="countdown">10</p>
+                <div class="heart">
+                    <p class="countdown">10</p>
+                </div>
                 <audio preload="auto">
                     <source src="./bgm/10sec_countdown.mp3">
                 </audio>
             </li>
             <li class="page answers">
-                <h1>A2 <span>志田さんがASG時代寝泊まりしていたのはどこ?</span></h1>
+                <p class="qa-q-no">Q3</h1>
+                <p class="qa-q-text">新郎のあだ名でないものはどれ？</p>
                 <ol class="selection">
-                    <li>
-                        <img src="/static/img/q3/p4/s1.jpg" />
-                        <span class="count">0</span>
-                    </li>
-                    <li>
-                        <img src="/static/img/q3/p4/s2.png" />
-                        <span class="count">0</span>
-                    </li>
-                    <li class="answer">
-                        <img src="/static/img/q3/p4/s3.jpg" />
-                        <span class="count">0</span>
-                    </li>
-                    <li>
-                        <img src="/static/img/q3/p4/s4.jpg" />
-                        <span class="count">0</span>
-                    </li>
+                    <li class="answer">わかばい<span class="count">0</span></li>
+                    <li>けーけー<span class="count">0</span></li>
+                    <li>ばやし<span class="count">0</span></li>
+                    <li>あられ<span class="count">0</span></li>
+                </ol>
+                <audio preload="auto" data-after-delay="500">
+                    <source src="./bgm/answer_check.mp3">
+                </audio>
+                <audio preload="auto">
+                    <source src="./bgm/answer.mp3">
+                </audio>
+            </li>
+            <li class="page losers">
+                <h1 class="loser_ttl">脱落はこの人・・・</h1>
+                <ul class="loser-list">
+                </ul>
+                <audio preload="auto">
+                    <source src="./bgm/loser.mp3">
+                </audio>
+            </li>
+
+
+            <!-- Q4 -->
+            <li class="page ready-quiz">
+                <p class="ready-q-no">Q4</p>
+                <div class="ready-q-text">
+                    <p>新婦が大学時代に<br />研究対象にしなかった動物はどれ？</p>
+                </div>
+                <p class="note">「次へ」を押して、回答画面に移動してください</p>
+                <audio preload="auto">
+                    <source src="./bgm/quiz_start.mp3">
+                </audio>
+            </li>
+            <li class="page quiz">
+                <p class="qa-q-no">Q4</h1>
+                <p class="qa-q-text">新婦が大学時代に研究対象にしなかった動物はどれ？</p>
+                <ol class="selection">
+                    <li><img src="./img/q3/3-q4-1.jpg" width="300" /></li>
+                    <li><img src="./img/q3/3-q4-2.jpg" width="300" /></li>
+                    <li><img src="./img/q3/3-q4-3.jpg" width="300" /></li>
+                    <li><img src="./img/q3/3-q4-4.jpg" width="300" /></li>
+                </ol>
+                <div class="heart">
+                    <p class="countdown">10</p>
+                </div>
+                <audio preload="auto">
+                    <source src="./bgm/10sec_countdown.mp3">
+                </audio>
+            </li>
+            <li class="page answers">
+                <p class="qa-q-no">Q4</h1>
+                <p class="qa-q-text">新婦が大学時代に研究対象にしなかった動物はどれ？</p>
+                <ol class="selection">
+                    <li><img src="./img/q3/3-q4-1.jpg" width="300" /><span class="count">0</span></li>
+                    <li><img src="./img/q3/3-q4-2.jpg" width="300" /><span class="count">0</span></li>
+                    <li><img src="./img/q3/3-q4-3.jpg" width="300" /><span class="count">0</span></li>
+                    <li class="answer"><img src="./img/q3/3-q4-4.jpg" width="300" /><span class="count">0</span></li>
                 </ol>
                 <audio preload="auto" data-after-delay="500">
                     <source src="./bgm/answer_check.mp3">
@@ -319,6 +229,7 @@
                 </audio>
             </li>
             <li class="page winners">
+                <h1 class="winner_ttl">優勝は・・・</h1>
                 <ul class="winner-list">
                 </ul>
                 <audio preload="auto">
@@ -330,6 +241,9 @@
         <ul id="controllers">
             <li><button id="next">次へ</button></li>
             <li><button id="rebirth">全員復活</button></li>
+            <li><button onclick="location.href='./q4.html'">次の問題へ</button><li>
         </ul>
+        </div>
+    </div>
     </body>
 </html>

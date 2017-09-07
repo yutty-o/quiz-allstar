@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>クイズ</title>
+        <meta name="robots" content="noindex,nofollow" />
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" />
+        <meta name="format-detection" content="telephone=no" />
+
+        <link rel="stylesheet" href="./css/reset.css">
+        <link rel="stylesheet" href="./css/style.css">
+        <link rel="stylesheet" href="./css/animate.css">
+
+        <script type="text/javascript" src="https://yuune-site-assets.s3-ap-northeast-1.amazonaws.com/javascripts/jquery-2.1.1.js"></script>
+        <script type="text/javascript" src="./js/quiz.js"></script>
+    </head>
+    <body>
+    <div class="wrap">
+        <div class="wrap-inner">
+        <ul id="pages">
+            <!-- ready -->
+            <li class="page first">
+                <p class="start_icon"><img src="./img/intro/icon-start.png" width="693" height="535" /></p>    
+                <audio preload="auto">
+                    <source src="./bgm/opening.mp3">
+                </audio>
+            </li>
+
+            <!-- Q1 -->
+            <li class="page ready-quiz">
+                <p class="ready-q-no">Q1</p>
+                <div class="ready-q-text">
+                    <p>2人が出会ったのはいつ？</p>
+                </div>
+                <p class="note">「次へ」を押して、回答画面に移動してください</p>
+                <audio preload="auto">
+                    <source src="./bgm/quiz_start.mp3">
+                </audio>
+            </li>
+            <li class="page quiz">
+                <p class="qa-q-no">Q1</p>
+                <p class="qa-q-text">2人が出会ったのはいつ？</p>
+                <ol class="selection">
+                    <li>小学校</li>
+                    <li>高校</li>
+                    <li>大学</li>
+                    <li>社会人</li>
+                </ol>
+                <div class="heart">
+                    <p class="countdown">10</p>
+                </div>
+                <audio preload="auto">
+                    <source src="./bgm/10sec_countdown.mp3">
+                </audio>
+            </li>
+            <li class="page answers">
+                <p class="qa-q-no">Q1</p>
+                <p class="qa-q-text">2人が出会ったのはいつ？</p>
+                <ol class="selection">
+                    <li>小学校<span class="count">0</span></li>
+                    <li>高校<span class="count">0</span></li>
+                    <li class="answer">大学<span class="count">0</span></li>
+                    <li>社会人<span class="count">0</span></li>
+                </ol>
+                <audio preload="auto" data-after-delay="500">
+                    <source src="./bgm/answer_check.mp3">
+                </audio>
+                <audio preload="auto">
+                    <source src="./bgm/answer.mp3">
+                </audio>
+            </li>
+            <li class="page losers">
+                <h1 class="loser_ttl">脱落はこの人・・・</h1>
+                <ul class="loser-list">
+                </ul>
+                <audio preload="auto">
+                    <source src="./bgm/loser.mp3">
+                </audio>
+            </li>
+
+            
+            <!-- Q2 -->
+            <li class="page ready-quiz">
+                <p class="ready-q-no">Q2</p>
+                <div class="ready-q-text">
+                    <p>2人の出会いのきっかけはどれ？</p>
+                </div>
+                <p class="note">「次へ」を押して、回答画面に移動してください</p>
+                <audio preload="auto">
+                    <source src="./bgm/quiz_start.mp3">
+                </audio>
+            </li>
+            <li class="page quiz">
+                <p class="qa-q-no">Q2</h1>
+                <p class="qa-q-text">2人の出会いのきっかけはどれ？</p>
+                <ol class="selection">
+                    <li>合コン</li>
+                    <li>サークル</li>
+                    <li>ナンパ</li>
+                    <li>マッチング<br />アプリ</li>
+                </ol>
+                <div class="heart">
+                    <p class="countdown">10</p>
+                </div>
+                <audio preload="auto">
+                    <source src="./bgm/10sec_countdown.mp3">
+                </audio>
+            </li>
+            <li class="page answers">
+                <p class="qa-q-no">Q2</h1>
+                <p class="qa-q-text">2人の出会いのきっかけはどれ？</p>
+                <ol class="selection">
+                    <li>合コン<span class="count">0</span></li>
+                    <li class="answer">サークル<span class="count">0</span></li>
+                    <li>ナンパ<span class="count">0</span></li>
+                    <li>マッチング<br />アプリ<span class="count">0</span></li>
+                </ol>
+                <audio preload="auto" data-after-delay="500">
+                    <source src="./bgm/answer_check.mp3">
+                </audio>
+                <audio preload="auto">
+                    <source src="./bgm/answer.mp3">
+                </audio>
+            </li>
+            <li class="page losers">
+                <h1 class="loser_ttl">脱落はこの人・・・</h1>
+                <ul class="loser-list">
+                </ul>
+                <audio preload="auto">
+                    <source src="./bgm/loser.mp3">
+                </audio>
+            </li>
+
+
+            <!-- Q3 -->
+            <li class="page ready-quiz">
+                <p class="ready-q-no">Q3</p>
+                <div class="ready-q-text">
+                    <p>2人の結婚式場の名称はどれ？</p>
+                </div>
+                <p class="note">「次へ」を押して、回答画面に移動してください</p>
+                <audio preload="auto">
+                    <source src="./bgm/quiz_start.mp3">
+                </audio>
+            </li>
+            <li class="page quiz">
+                <p class="qa-q-no">Q3</h1>
+                <p class="qa-q-text">2人の結婚式場の名称はどれ？</p>
+                <ol class="selection">
+                    <li>TRUMP(HOTEL)</li>
+                    <li>TRNUK(HOTEL)</li>
+                    <li>TRUCK(HOTEL)</li>
+                    <li>TRUNK(HOTEL)</li>
+                </ol>
+                <div class="heart">
+                    <p class="countdown">10</p>
+                </div>
+                <audio preload="auto">
+                    <source src="./bgm/10sec_countdown.mp3">
+                </audio>
+            </li>
+            <li class="page answers">
+                <p class="qa-q-no">Q3</h1>
+                <p class="qa-q-text">2人の結婚式場の名称はどれ？</p>
+                <ol class="selection">
+                    <li>TRUMP(HOTEL)<span class="count">0</span></li>
+                    <li>TRNUK(HOTEL)<span class="count">0</span></li>
+                    <li>TRUCK(HOTEL)<span class="count">0</span></li>
+                    <li class="answer">TRUNK(HOTEL)<span class="count">0</span></li>
+                </ol>
+                <audio preload="auto" data-after-delay="500">
+                    <source src="./bgm/answer_check.mp3">
+                </audio>
+                <audio preload="auto">
+                    <source src="./bgm/answer.mp3">
+                </audio>
+            </li>
+            <li class="page losers">
+                <h1 class="loser_ttl">脱落はこの人・・・</h1>
+                <ul class="loser-list">
+                </ul>
+                <audio preload="auto">
+                    <source src="./bgm/loser.mp3">
+                </audio>
+            </li>
+
+
+            <!-- Q4 -->
+            <li class="page ready-quiz">
+                <p class="ready-q-no">Q4</p>
+                <div class="ready-q-text">
+                    <p>新郎が一番気に入っている<br />新婦の写真はどれ？</p>
+                </div>
+                <p class="note">「次へ」を押して、回答画面に移動してください</p>
+                <audio preload="auto">
+                    <source src="./bgm/quiz_start.mp3">
+                </audio>
+            </li>
+            <li class="page quiz">
+                <p class="qa-q-no">Q4</h1>
+                <p class="qa-q-text">新郎が一番気に入っている新婦の写真はどれ？</p>
+                <ol class="selection">
+                    <li><img src="./img/q4/4-q4-1.jpg" width="300" /></li>
+                    <li><img src="./img/q4/4-q4-2.jpg" width="300" /></li>
+                    <li><img src="./img/q4/4-q4-3.jpg" width="300" /></li>
+                    <li><img src="./img/q4/4-q4-4.jpg" width="300" /></li>
+                </ol>
+                <div class="heart">
+                    <p class="countdown">10</p>
+                </div>
+                <audio preload="auto">
+                    <source src="./bgm/10sec_countdown.mp3">
+                </audio>
+            </li>
+            <li class="page answers">
+                <p class="qa-q-no">Q4</h1>
+                <p class="qa-q-text">新郎が一番気に入っている新婦の写真はどれ？</p>
+                <ol class="selection">
+                    <li><img src="./img/q4/4-q4-1.jpg" width="300" /><span class="count">0</span></li>
+                    <li class="answer"><img src="./img/q4/4-q4-2.jpg" width="300" /><span class="count">0</span></li>
+                    <li><img src="./img/q4/4-q4-3.jpg" width="300" /><span class="count">0</span></li>
+                    <li><img src="./img/q4/4-q4-4.jpg" width="300" /><span class="count">0</span></li>
+                </ol>
+                <audio preload="auto" data-after-delay="500">
+                    <source src="./bgm/answer_check.mp3">
+                </audio>
+                <audio preload="auto">
+                    <source src="./bgm/answer.mp3">
+                </audio>
+            </li>
+            <li class="page winners">
+                <h1 class="winner_ttl">優勝は・・・</h1>
+                <ul class="winner-list">
+                </ul>
+                <audio preload="auto">
+                    <source src="./bgm/fanfare.mp3">
+                </audio>
+            </li>
+        </ul>
+
+        <ul id="controllers">
+            <li><button id="next">次へ</button></li>
+            <li><button id="rebirth">全員復活</button></li>
+            <li><button onclick="location.href='./q5.html'">次の問題へ</button><li>
+        </ul>
+        </div>
+    </div>
+    </body>
+</html>
