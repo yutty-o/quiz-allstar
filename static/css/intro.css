@@ -41,6 +41,10 @@ ul li {
 	background: url("../img/intro/bg-pre.png") no-repeat;
 	background-size: cover;
 }
+.bg-first-prize {
+	background: url("../img/intro/bg-first-prize.png") no-repeat;
+	background-size: cover;
+}
 .bg-prize {
 	background: url("../img/intro/bg-prize.png") no-repeat;
 	background-size: cover;
