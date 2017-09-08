@@ -1,6 +1,9 @@
+@import url(https://fonts.googleapis.com/earlyaccess/mplus1p.css);
+
 body {
     margin: 0;
     color: #333;
+    font-family: "Mplus 1p";
 }
 
 /**
@@ -8,7 +11,7 @@ body {
  */
 
 .wrap {
-    padding: 75px 20px 0;
+    padding: 45px 20px 0;
     height: 100%;
     box-sizing: border-box;
 }
