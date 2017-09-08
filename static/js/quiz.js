@@ -260,18 +260,6 @@ Q.answer.load = function() {
       counts_of_answers: [10, 20, 30, 40],
       losers_or_winners: [
         {
-          name: "ゆうと",
-          time: 1.89
-        },
-        {
-          name: "そうご",
-          time: 2.21
-        },
-        {
-          name: "なかむら",
-          time: 3.12
-        },
-        {
           name: "けー",
           time: 2.21
         },

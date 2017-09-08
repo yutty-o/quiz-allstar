@@ -18,8 +18,17 @@ p {
 	text-align: center;
 }
 ul li {
-	font-size: 4em;
+	font-size: 3.5em;
 	line-height: 1.5em;
+}
+.bg-pre ul {
+	height: 490px;
+}
+.bg-pre ul li {
+	line-height: 1.8em;
+}
+.bg-explain p {
+	height: 490px;
 }
 
 /* Slide
@@ -71,6 +80,11 @@ ul li {
 }
 .bg-explain h1 {
 	margin-bottom: 80px !important;
+}
+.icon-qr-code {
+	position: absolute;
+	top: 100px;
+	right: 20px;
 }
 
 /**

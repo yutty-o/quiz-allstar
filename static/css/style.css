@@ -100,7 +100,7 @@ h1,h2 {
     width: 80px;
     height: 80px;
     text-align: center;
-    font-size: 2.5em;
+    font-size: 3.0em;
     font-weight: bold;
     color: #fff;
 }
@@ -111,7 +111,7 @@ h1,h2 {
 	width:65px;
 	height:106px;
     background:#ff0011;
-    top: -32px;
+    top: -28px;
     z-index: -1;
 }
 .countdown:before {
@@ -144,6 +144,7 @@ h1,h2 {
     padding: 10px;
     font-size: 3em;
     text-align: center;
+    background: rgba(255, 255, 255, 0.5);
 }
 .selection li:before {
     position: absolute;
@@ -222,6 +223,10 @@ p.answer_ttl {
 }
 
 
+.losers,
+.winners {
+    height: 655px;
+}
 
 .losers .loser-list,
 .winners .winner-list {
